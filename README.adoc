@@ -17,3 +17,7 @@ Obviously we're going to have a look at Markov chains, how to populate a Markov 
 We'll look at how varying the length of the input token sequence affects the quality of the predictions. We'll also look at how changing the seed corpus affect the predictions (eg Jane Austen vs Conan Doyle vs a big collection of npm modules), We'll consider, (but not implement) other things we could use to influence our model (punctuation, parts of speech tagging, stemming, synonyms). We'll also discuss at what point rolling the dice against a Markov chain start to cross-over into "artificial intelligence".
 
 The code I have written is in JavaScript, because everyone can read it, and it's pretty concise on screen. I'm happy to rework in another language if people have strong preferences for something else.
+
+== Speaker
+
+Jez Higgins is a freelance software grandad. He mucks in with programming, lends a hand with build & deployment processes, provides a leg up with TDD practices, and keeps an eye on the young 'uns so they don’t get trapped down the old mine shaft. He won Fishguard & Goodwick Hockey Club's Most Dedicated Player award for the 2023-24.
