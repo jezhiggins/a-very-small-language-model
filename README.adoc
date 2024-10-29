@@ -20,4 +20,4 @@ The code I have written is in JavaScript, because everyone can read it, and it's
 
 == Speaker
 
-Jez Higgins is a freelance software grandad. He mucks in with programming, lends a hand with build and deployment processes, provides a leg up with TDD practices, and keeps an eye on the young 'uns so they don’t get trapped down the old mine shaft. He won Fishguard & Goodwick Hockey Club's Most Dedicated Player award for the 2023-24.
+Jez Higgins is a freelance software grandad. He mucks in with programming, lends a hand with build and deployment processes, provides a leg up with TDD practices, and keeps an eye on the young 'uns so they don’t get trapped down the old mine shaft. He won Fishguard & Goodwick Hockey Club's Most Dedicated Player award for the 2023-24 season.
