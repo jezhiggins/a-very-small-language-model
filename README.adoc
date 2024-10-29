@@ -8,7 +8,7 @@ There are lots of things in software that seem kind of amazing, even to people w
 
 My phone keyboard keeps asking me again and again if I want to turn on some kind of AI assistant to "boost productivity" and "unlock creativity". I continue to say no, but it got me thinking. This rebranding of "next word prediction" as "AI assistance" groups this tech in the same bucket as the ChatGPTs and the Claudes and what have you and stokes up the idea that text prediction is a difficult problem, something best left to the big brains at Google or Apple or Microsoft with their shiny offices and free lunches in Silicon Valley and Redmond.
 
-I reject that idea. I think this tech is something any programmer can do. We can write a text prediction engine from a standing start in an hour. In this talk, I'll show attendees how to so just that, as well as enhance our very small language model, and maybe even "boost productivity" and "unlock creativity".
+I reject that idea. I think this technology is something any programmer can build. We can write a text prediction engine from a standing start in an hour. In this talk, I'll show attendees how to so just that, as well as enhance our very small language model, and maybe even "boost productivity" and "unlock creativity".
 
 == Session Content
 
