@@ -1,0 +1,12 @@
+= A Very Small Language Model
+Jez Higgins, jez@jezuk.co.uk
+{docdate}
+:notitle:
+:customcss: style/theme-tweak.css
+:revealjs_theme: night
+:revealjs_progress: true
+:revealjs_controls: true
+
+== !
+
+A Very Small Language Model

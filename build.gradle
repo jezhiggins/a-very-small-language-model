@@ -1,0 +1,52 @@
+plugins {
+  id 'org.asciidoctor.jvm.revealjs' version '4.0.4'
+  id 'org.asciidoctor.jvm.gems' version '4.0.4'
+  id 'org.asciidoctor.jvm.pdf' version '4.0.4'
+}
+
+repositories {
+  jcenter()
+  ruby {
+    gems()
+  }
+}
+
+revealjs {
+  version = '5.0.1'
+
+  templateLocal("src/reveal.js-5.0.1")
+  //templateGitHub {
+  //  organisation = 'hakimel'
+  //  repository = 'reveal.js'
+  //  tag = '5.0.1'
+  //}
+}
+
+asciidoctorRevealJs {
+  sources {
+    include "index.adoc"
+  }
+
+  baseDirFollowsSourceDir()
+
+  resources {
+    from("${sourceDir}/images") {
+      include '**'
+      into 'images'
+    }
+    from("${sourceDir}/style") {
+      include '**'
+      into 'style'
+    }
+  }
+}
+
+asciidoctorPdf {
+  sources {
+    include "index.adoc"
+  }
+
+  baseDirFollowsSourceDir()
+}
+
+defaultTasks 'asciidoctorRevealJs'

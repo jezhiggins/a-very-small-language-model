@@ -1,0 +1,30 @@
+.reveal blockquote {
+  background: rgba(255, 255, 255, 0.3);
+  width: auto;
+  font-size: 80%;
+}
+
+.slide-header {
+  width: 100%;
+  z-index: 10;
+}
+
+.slide-header-text {
+  float: right;
+}
+
+.reveal pre code {
+  max-height: unset;
+  padding: 2px;
+  line-height: 1.1em;
+}
+
+.big {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.reveal section img {
+    border: none;
+    box-shadow: none;
+}
