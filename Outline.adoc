@@ -1,0 +1,67 @@
+= A Very Small Language Model
+
+== Hi, how's everyone
+
+Long day, eh? Well, if you fancy more hard thinking there's Dietmar to my right doing Asyc {cpp}, Robert on my left looking at Monadic Operations in {cpp} (you'll all recall, no doubt that "All told, a monad in X is just a monoid in the category of endofunctors of X, with the cartesian product of sets replaced by composition of endofunctors and unit set by the identity endofunctor.") and round the corner we've got Jutta and Willem doing a couple of shorter talks on development processes. It's fairly hefty competition, and I'm very flattered you've chosen to be here. This session is, by some measure probably the lightest of the day (even the week), and I hope we can have some fun with some code, and just all have a nice time. If, however, having a nice time doesn't appeal, and you think maybe you'd rather skip out to one of the other sessions, I shan't be the least bit offended, so please do vote with you feet if you get the urge.
+
+== So what are we going to do?
+
+== Magic software
+
+== Simple bit of stats
+
+== Markov chains
+
+== Building the chain
+
+== Training the chain
+
+== Sliding windows
+
+one token, vs two tokens, etc
+
+== Choosing a corpus
+
+== Austenesque
+
+== Sherlockian
+
+== JavaScript-a-go-go
+
+== As you type
+
+== These *are* language models
+
+Very small language models, very simple language models, but nonetheless, they capture some essentiall essence of the source corpuses (corpi? no).
+
+=== How could we make them "better" models
+
+=== Stemming
+
+=== Parts of speech tagging
+
+nouns, verbs, adverbs, etc
+
+Controlled languages - noun-phrases
+
+=== Vector representation of words
+
+These vectors capture information about the meaning of the word based on the surrounding words. The word2vec algorithm estimates these representations by modeling text in a large corpus. Once trained, such a model can detect synonymous words or suggest additional words for a partial sentence. Word2vec was developed by Tomáš Mikolov and colleagues at Google and published in 2013.
+
+=== No time
+
+These represent rather more work that my "can I do this in the time it takes to play a game of hockey", but NLP is a fascinating subject and if your interest is piqued, do investigate.
+
+== A Horrific Chimera
+
+If we had some nice Austen, and some ok Holmes, and some, well, some JavaScript, if we put them all together, it'll be even better right?
+
+But, no
+
+== Even small systems get the blues
+
+On the one hand, this is a just a bit of fun. Programming for money is great and all, but it's often quite run of the mill, so if you need to, just bunk off for a couple of hours - noone will notice - and write something fun, something a bit magic. You'll feel better for it.
+
+On the other hand, the title of this talk is obviously an allusion to the AI hype that's swirling and whirling all around us. Even a tiny system like this can display surprising, and convincing, behaviour, but as we feed it more and more text, it actually gets worse and worse. Bigger systems will display even more surprising and convincing behaviour, but as they grab more and more text, it looks like they too will actually get worse and worse.
+
+I've just said programming can be a ton of fun, because it can. We can reach out and explore these incredible problem spaces, and for each problem there's an infinity of solutions. There's this incredible multidimensional space we can shape and travel through, so it can be fun, but it can be dangerous. There are consequences to the things we build too. So, have fun, but let's be careful out there. 
