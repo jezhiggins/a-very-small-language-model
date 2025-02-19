@@ -2,11 +2,61 @@
 
 == Hi, how's everyone
 
-Long day, eh? Well, if you fancy more hard thinking there's Dietmar to my right doing Asyc {cpp}, Robert on my left looking at Monadic Operations in {cpp} (you'll all recall, no doubt that "All told, a monad in X is just a monoid in the category of endofunctors of X, with the cartesian product of sets replaced by composition of endofunctors and unit set by the identity endofunctor.") and round the corner we've got Jutta and Willem doing a couple of shorter talks on development processes. It's fairly hefty competition, and I'm very flattered you've chosen to be here. This session is, by some measure probably the lightest of the day (even the week), and I hope we can have some fun with some code, and just all have a nice time. If, however, having a nice time doesn't appeal, and you think maybe you'd rather skip out to one of the other sessions, I shan't be the least bit offended, so please do vote with you feet if you get the urge.
+Long day, eh? Well, if you fancy more hard thinking there's Dietmar to my right doing Async {cpp}, Robert on my left looking at Monadic Operations in {cpp} (you'll all recall, no doubt that "All told, a monad in X is just a monoid in the category of endofunctors of X, with the cartesian product of sets replaced by composition of endofunctors and unit set by the identity endofunctor.") and round the corner we've got Jutta and Willem doing a couple of shorter talks on development processes. It's fairly hefty competition, and I'm very flattered you've chosen to be here. This session is, by some measure probably the lightest of the day (even the week), and I hope we can have some fun with some code, and just all have a nice time. If, however, having a nice time doesn't appeal, and you think maybe you'd rather skip out to one of the other sessions, I shan't be the least bit offended, so please do vote with you feet if you get the urge.
 
 == So what are we going to do?
 
+We're going to build a bit of magic software in the hour or so.
+
 == Magic software
+
+What do I mean by magic software?
+
+There are lots of things in software that seem kind of amazing, even to people who work in software. Operating systems, compilers & interpreters, windowing systems - things we use all day every day - are obvious choices. Lots of game stuff too - I'm not just talking about graphics rendering, which is actually pretty well described, but things like in-game AI. Satnavs, they're pretty cool.
+
+Does anyone here play Dominion? There's a lovely version of Dominion for your tablet, and the computer opponents are not just really good, but will play the same cards in different ways. It doesn't just come up with one optimised path, it'll do different things, sometimes in response to what you do and sometimes because, I don't know, it just feels like it.
+
+These are, however, all pretty large topics. You can’t write an operating system in even a 90 minute session. I can’t anyway.
+
+== Do you want AI?
+
+So, about this time last year, I was poking around on my phone doing something or other, and my keyboard suddenly asked me if I want to turn on some kind of AI assistant to “boost productivity” and “unlock creativity”.
+
+Obviously, I said no, because honestly, how much productivity boosting and creativity unlocking do you to send WhatsApp messages? And, in any case, it can’t do that.
+
+However, it did get me thinking. It did! Really - I'm not giving you some kind of trite homily here - I promise you it did.
+
+We are all, of course, familiar with how phone keyboards in particular, and more widely the general act of typing things on a computer, offer up suggestions for the word you're currently typing, and also the next word you might want to type.
+
+The first time I encountered next word prediction was in late 1991 or early 1992, in a piece of education software. It was, for all intents and purposes, a word processor to help children with specific learning difficulties (dyspraxia, dyslexia, or whatever) write more easily. As you typed, it popped up a selection of suggested words and you could just pick them off the list. Commonplace these days, but quite startling if you've never seen it before.
+
+Now, here was a keyboard rebranding “next word prediction” as “AI assistance”. It's attempting to groups this technology in the same bucket as the ChatGPTs and the Claudes and what have you. It's trying to stoke up the idea that text prediction is a hard problem, something best left to the big brains at Google or Apple or Microsoft with their shiny offices and free lunches in Silicon Valley and Redmond.
+
+But, hang on, if a BBC Master system could do this 35 years ago, how hard could it be?
+
+Can we build one in an hour?
+
+== Spoiler
+
+I originally thought 45 minutes, because I think this would make a cool session at a different conference with shorter slots, so I was reallly going for it. But I was also watching a really good FIH ProLeague hockey match at the same time, so it took about 80 minutes for the first cut.
+
+Next ProLeague hockey is the 7 June - Spain-Argentina double header, then Netherlands-Australia women from the Wagener in Amstelveen. Should all be cracking. I'm predicting Spain women, Spain men, Netherlands women (never bet against the Dutch women) btw. Point is, no such distractions today - only distractions of my own making.
+
+== A quick note about implementation language
+
+My first language is {cpp} (it's not, by you know what I mean), and perhaps because of that, I’ve had conversations with people who work in C# or  Python or PHP or similar say that all that low-level stuff is too complicated for them. I’ve also encountered a lot of {cpp} (and C and assembler) snobs who look down the noses at languages you can’t cause a segfault with and the people who use them.
+
+The latter are probably beyond redemption, but it kind of boils my piss that there are programmers who’ve taken some of that snobbery onto themselves and accept that it’s founded in any kind of truth. C++ programmers aren’t on some rarefied mountain top. Programming’s programming. Software’s the most malleable medium we could wish to work in. Anybody can do anything in software.
+
+So, I'm doing this in JavaScript :D  If we can do magic stuff in JavaScript, then we can do anything.
+
+Besides, it fits on slides better
+
+Remember, you can switch to another talk any time you like.
+
+== That's the preamble
+
+Shall we get started?
 
 == Simple bit of stats
 
@@ -64,4 +114,4 @@ On the one hand, this is a just a bit of fun. Programming for money is great and
 
 On the other hand, the title of this talk is obviously an allusion to the AI hype that's swirling and whirling all around us. Even a tiny system like this can display surprising, and convincing, behaviour, but as we feed it more and more text, it actually gets worse and worse. Bigger systems will display even more surprising and convincing behaviour, but as they grab more and more text, it looks like they too will actually get worse and worse.
 
-I've just said programming can be a ton of fun, because it can. We can reach out and explore these incredible problem spaces, and for each problem there's an infinity of solutions. There's this incredible multidimensional space we can shape and travel through, so it can be fun, but it can be dangerous. There are consequences to the things we build too. So, have fun, but let's be careful out there. 
+I've just said programming can be a ton of fun, because it can. We can reach out and explore these incredible problem spaces, and for each problem there's an infinity of solutions. There's this incredible multidimensional space we can shape and travel through, so it can be fun, but it can be dangerous. There are consequences to the things we build too. So, have fun, but let's be careful out there.
