@@ -12,7 +12,7 @@ We're going to build a bit of magic software in the hour or so.
 
 What do I mean by magic software?
 
-There are lots of things in software that seem kind of amazing, even to people who work in software. Operating systems, compilers & interpreters, windowing systems - things we use all day every day - are obvious choices. Lots of game stuff too - I'm not just talking about graphics rendering, which is actually pretty well described, but things like in-game AI. Satnavs, they're pretty cool.
+There are lots of things in software that seem kind of amazing, even to people who work in software. Operating systems, compilers & interpreters, windowing systems - things we use all day every day - are obvious choices. Lots of game stuff too - I'm not just talking about graphics rendering, but things like in-game AI. Satnavs, they're pretty cool.
 
 Does anyone here play Dominion? There's a lovely version of Dominion for your tablet, and the computer opponents are not just really good, but will play the same cards in different ways. It doesn't just come up with one optimised path, it'll do different things, sometimes in response to what you do and sometimes because, I don't know, it just feels like it.
 
@@ -54,13 +54,27 @@ Besides, it fits on slides better
 
 Remember, you can switch to another talk any time you like.
 
+I've used the phrase "magic software". I don't necessarily mean it's particularly unknown, or requires deep knowledge, or anything like that. Writing an operating system is pretty well described and has been for decades. Sometimes all you need a half a clue and to bash away it for a while.
+
 == That's the preamble
 
 Shall we get started?
 
-== Simple bit of stats
-
 == Markov chains
+
+The half a clue I had was the name "Markov chain". I knew you that was something to do with it, so I messages by son Daniel, who's doing a PhD in Mathematical Systems and said
+
+"Remind me what a Markov Chain is"
+
+"Dad, that's GCSE stuff"
+
+"So remind me. I didn't do GCSEs"
+
+"Fossil"
+
+I did send him another message, but the last time I said a naughty word during a talk the video didn't get published. 
+
+== Simple bit of stats
 
 == Building the chain
 
