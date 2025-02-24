@@ -4,9 +4,61 @@ Jez Higgins, jez@jezuk.co.uk
 :notitle:
 :customcss: style/theme-tweak.css
 :revealjs_theme: night
+:revealjs_totalTime: 4800
 :revealjs_progress: true
 :revealjs_controls: true
 
 == !
 
-A Very Small Language Model
+[big]*A Very Small Language Model*
+
+[NOTE.speaker]
+--
+Hello friends, I'm Jez and this session is the lightest of the day (perhaps even of the week).
+
+It's been a long day, eh? Well, if you fancy more hard thinking there's Dietmar to my right doing Async {cpp}, Robert on my left looking at Monadic Operations in {cpp} (you'll all recall, no doubt that _All told, a monad in X is just a monoid in the category of endofunctors of X, with the cartesian product of sets replaced by composition of endofunctors and unit set by the identity endofunctor_) and round the corner we've got Jutta and Willem doing a couple of shorter talks on development processes.
+
+It's fairly hefty competition, and I'm very flattered you've chosen to be here. This session is, by some measure probably the lightest of the day (even the week), and I hope we can have some fun with some code, and relax a bit before the lightning talks. If, however, having a nice time doesn't appeal, and you think maybe you'd rather skip out to one of the other sessions, I shan't be the least bit offended, so please do vote with you feet if you get the urge.
+
+So, what are we going to do?
+
+We're going to build a bit of magic software in an hour or so.
+--
+
+== !
+
+[big]*Magic Software*
+
+[NOTE.speaker]
+--
+What do I mean by magic software?
+
+There are lots of things in software that seem kind of amazing, even to people who work in software. Operating systems, compilers & interpreters, windowing systems - things we use all day every day - are obvious choices. Sat navs! Lots of game stuff - I'm not just talking about graphics rendering, but things like in-game AI. Satnavs, they're pretty cool.
+
+Does anyone here play Dominion? There's a lovely version of Dominion for your tablet, and the computer opponents are really, really good.
+
+Even the more mundane stuff can be fascinating - there was an incredible article about Hans Boehm's calculator app. It magical because it can do (10^100) + 1 − (10^100) correctlyfootnote:[https://chadnauseam.com/coding/random/calculator-app] through the miracle of quite a lot of hard maths.
+
+These are, however, all pretty large topics. You can’t write an operating system, or even a calculator, in  a 90 minute session. I can’t anyway. I am not Ken Thompson.
+--
+
+=== Dominion
+
+image::images/Dominion.jpg[]
+
+[NOTES.speaker]
+--
+This is the start of a game of Dominion. It's a deck builder game, so you start with a handful of cards, and as the game progresses you gain more cards from the middle here.
+
+Each of these action cards has a different effect, these over here can be used to modify the behaviour of them. The aim is get the most of these green cards over here, but you don't want to go to early, because they're otherwise useless and take up space in your hand here.
+
+There's a lot to balance.  And every game is almost guaranteed to be unique - there are hundreds of these different action cards, and so you might need a very different approach from one game to the next.
+
+The computer opponents are really good, particularly because they will play the same cards in different ways. It doesn't just come up with one optimised path, it'll do different things, sometimes in response to what you do and sometimes because, I don't know, it just feels like it.
+
+It's terrific. I have no idea how it does it, it's just great.
+--
+
+=== CycleStreets LiveRide
+
+
