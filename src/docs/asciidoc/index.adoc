@@ -61,4 +61,16 @@ It's terrific. I have no idea how it does it, it's just great.
 
 === CycleStreets LiveRide
 
-
+[mermaid]
+----
+---
+config:
+  look: handDrawn
+  theme: neutral
+---
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>Bob: Hello Bob, how are you?
+    Bob-->>Alice: Great!
+----
