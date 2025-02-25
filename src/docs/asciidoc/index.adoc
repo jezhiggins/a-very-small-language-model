@@ -61,16 +61,19 @@ It's terrific. I have no idea how it does it, it's just great.
 
 === CycleStreets LiveRide
 
-[mermaid]
+[graphviz]
 ----
----
-config:
-  look: handDrawn
-  theme: neutral
----
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>Bob: Hello Bob, how are you?
-    Bob-->>Alice: Great!
+digraph finite_state_machine {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	rankdir=LR;
+	node [shape = circle] B A C;
+ 	A -> C [label = "0.6"];
+	A -> B [label = "0.4"];
+    B -> C [label = "0.3"];
+    B -> A [label = "0.7"];
+    C -> B [label = "0.5"];
+    C -> A [label = "0.5"];
+}
 ----
