@@ -37,7 +37,7 @@ There are lots of things in software that seem kind of amazing, even to people w
 
 Does anyone here play Dominion? There's a lovely version of Dominion for your tablet, and the computer opponents are really, really good.
 
-Even the more mundane stuff can be fascinating - there was an incredible article about Hans Boehm's calculator app. It magical because it can do (10^100) + 1 − (10^100) correctlyfootnote:[https://chadnauseam.com/coding/random/calculator-app] through the miracle of quite a lot of hard maths.
+Even the more mundane stuff can be fascinating - there was an incredible article about Hans Boehm's calculator app. It magical because it can do (10^100) + 1 − (10^100) correctly through the miracle of quite a lot of hard maths.
 
 These are, however, all pretty large topics. You can’t write an operating system, or even a calculator, in  a 90 minute session. I can’t anyway. I am not Ken Thompson.
 --
@@ -46,7 +46,7 @@ These are, however, all pretty large topics. You can’t write an operating syst
 
 image::images/Dominion.jpg[]
 
-[NOTES.speaker]
+[NOTE.speaker]
 --
 This is the start of a game of Dominion. It's a deck builder game, so you start with a handful of cards, and as the game progresses you gain more cards from the middle here.
 
@@ -77,3 +77,38 @@ digraph finite_state_machine {
     C -> A [label = "0.5"];
 }
 ----
+
+== !
+
+image::images/hello-keyboard.png[]
+
+[NOTE.speaker]
+--
+So, about this time last year, I was poking around on my phone doing something or other, and my keyboard suddenly asked me if I want to turn on some kind of AI assistant to “boost productivity” and “unlock creativity”.
+
+Obviously, I said no, because honestly, how much productivity boosting and creativity unlocking do you to send WhatsApp messages? And, in any case, it can’t do that.
+
+However, it did get me thinking. It did! Really - I'm not giving you some kind of trite homily here - I promise you it did.
+
+We are all, of course, familiar with how phone keyboards in particular, and more widely the general act of typing things on a computer, offer up suggestions for the word you're currently typing, and also the next word you might want to type.
+
+The first time I encountered next word prediction was in late 1991 or early 1992, in a piece of schools' software. It was, for all intents and purposes, a word processor, and it was intended to help children with specific learning difficulties (dyspraxia, dysgraphia, dyslexia, or whatever) write more easily. As you typed, it popped up a selection of suggested words and you could just pick them off the list. I think it would also suggest next words. Commonplace these days, but really quite startling, even slightly spooky and magical, if you've never seen it before.
+
+Now, here was a keyboard rebranding “next word prediction” as “AI assistance”. This is an attempt to group this technology in the same bucket as the ChatGPTs and the Claudes and what have you. It's trying to stoke up the idea that text prediction is a hard problem, something best left to the big brains at Google or Apple or Microsoft with their shiny offices and free lunches in Silicon Valley and Redmond
+--
+
+== !
+
+image::images/Acorn_BBC_Master_Series_Transparent.png[]
+
+[.text-right]
+--
+[.small]#Photo courtesy of Dejdżer / Digga, \https://commons.wikimedia.org/wiki/File\:Acorn_BBC_Master_Series.jpg#
+--
+
+[NOTE.speaker]
+--
+But, hang on, if a BBC Master system could do this 35 years ago, how hard could it be?
+
+Can we build one in an hour?
+--
