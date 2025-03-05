@@ -195,12 +195,12 @@ A random process in which the transition probability only depends on where you a
 * _sequence of events_ - we can keep going
 * _probability of each event depends only on the state attained in the previous event_ -  what happens next depends only on where we are now, not on how we got here, the future is independent of the past
 
-* it's called a Markov chain for Andrey Markov, who was a Russian mathematician who did a lot of work on stochastic process around the turn of the 20th Century - 1856 to 1922
+* it's called a Markov chain for Andrey Markov, who was a Russian mathematician who did a lot of work on stochastic processes around the turn of the 20th Century - 1856 to 1922.
 --
 
 == !
 
-[graphviz, layout=sfdp]
+[graphviz, layout=sfdp, width=600]
 ----
 digraph finite_state_machine {
 	fontname="Helvetica,Arial,sans-serif"
@@ -222,4 +222,143 @@ digraph finite_state_machine {
 --
 Here's a little Markov process.
 
-The sum of the probabilities of the new states is always 1.
+If we start over here in State A, then the probability of us moving to state B is 0.4, and the probability of moving to state C is 0.6. So, B or C? Let's hear it for B! Let's hear it for C!
+
+Note that the sum of the state transition probabilities is always 1. Even if we can stay where we are, that's still a transition, still gets its own probability.
+
+We're all programmers, the probability that we didn't even
+notice that this is a discrete-time Markov chain approaches 1. You can build continuous time Markov processes, but I've no idea how you'd actually do that, and it probably involves some kind of fearsome calculus, so let's pretend I never even mentioned it.
+
+So, we have this little state space, that we're randomly and memorylessly mocing around. These have, perhaps surprisingly, a number of real world applications
+
+* Including in macroeconomics - stock price equilibrium, for example, and various Monte Carlo simulations
+* Markov chains can be used to model interaction between state actors. We may have to reevaluate that in the light of recent events, but it's been done.
+* They have application in algorithmic music generation
+* Baseball analytics, apparently (and perhaps not real world)
+
+And, of course, since you've all read the synopsis of this session, you can use Markov chains for algorithmic text generation
+--
+
+== !
+
+[.big]#Algorithmic text generation#
+
+[NOTE.speaker]
+--
+How do we apply Markov chains to text generation?
+--
+
+== !
+
+[graphviz, layout=sfdp, width=600]
+----
+digraph finite_state_machine {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	rankdir=LR;
+	node [shape = circle] B A C;
+ 	A -> C [label = "0.6"];
+	A -> B [label = "0.4"];
+    B -> C [label = "0.3"];
+    B -> A [label = "0.7"];
+    C -> B [label = "0.4"];
+    C -> A [label = "0.4"];
+    C -> C [label = "0.2"];
+}
+----
+
+== !
+
+[graphviz, layout=sfdp, width=600]
+----
+digraph finite_state_machine {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	rankdir=LR;
+	node [shape = circle] B A C;
+    A [label = "hello"];
+ 	A -> C [label = "0.6"];
+	A -> B [label = "0.4"];
+    B -> C [label = "0.3"];
+    B -> A [label = "0.7"];
+    C -> B [label = "0.4"];
+    C -> A [label = "0.4"];
+    C -> C [label = "0.2"];
+}
+----
+
+[NOTE.speaker]
+--
+Well, what if instead of state A we had "hello"
+--
+
+
+== !
+
+[graphviz, layout=sfdp, width=600]
+----
+digraph finite_state_machine {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	rankdir=LR;
+	node [shape = circle] B A C;
+    A [label = "hello"];
+    B [label = "there"];
+ 	A -> C [label = "0.6"];
+	A -> B [label = "0.4"];
+    B -> C [label = "0.3"];
+    B -> A [label = "0.7"];
+    C -> B [label = "0.4"];
+    C -> A [label = "0.4"];
+    C -> C [label = "0.2"];
+}
+----
+
+[NOTE.speaker]
+--
+Instead of state B we had "there"
+--
+
+
+== !
+
+[graphviz, layout=sfdp, width=600]
+----
+digraph finite_state_machine {
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	rankdir=LR;
+	node [shape = circle] B A C;
+    A [label = "hello"];
+    B [label = "there"];
+    C [label = "world"];
+ 	A -> C [label = "0.6"];
+	A -> B [label = "0.4"];
+    B -> C [label = "0.3"];
+    B -> A [label = "0.7"];
+    C -> B [label = "0.4"];
+    C -> A [label = "0.4"];
+    C -> C [label = "0.2"];
+}
+----
+
+[NOTE.speaker]
+--
+And instead of state C, we had, of course, Brian Kernighan approved word "world"
+
+So, if we start at "hello", we might transition to, aka generate the next word, "there", or we might generate "world".
+
+Start at "hello". Pick a number. Transition to, aka generate the next world, "world".
+
+Try again, start at "hello". Pick a number. Move to "world"
+
+Try again, start at "hello". Pick a number. Move to "there"
+
+And lo, we algorithmic text generation. I mean, it's not huge, but it's not nothing.
+--
+
+
