@@ -36,16 +36,27 @@ We're going to build a bit of magic software in an hour or so.
 --
 What do I mean by magic software?
 
-There are lots of things in software that seem kind of amazing, even to people who work in software. Operating systems, compilers & interpreters, windowing systems - things we use all day every day - are obvious choices. Sat navs! Lots of game stuff - I'm not just talking about graphics rendering, but things like in-game AI. Satnavs, they're pretty cool.
+There are lots of things in software that seem kind of amazing, even to people who work in software. Operating systems, compilers & interpreters, windowing systems - things we use all day every day - are obvious choices.
 
-Does anyone here play Dominion? There's a lovely version of Dominion for your tablet, and the computer opponents are really, really good.
+I mean, does anyone really understand operating systems? We passed the comprehension limit (which I'm going to confidently state is about 10 thousand lines but without the reference to back it up) for operating systems with 6th Edition Unix. It's incredible they work at all!
 
-Even the more mundane stuff can be fascinating - there was an incredible article about Hans Boehm's calculator app. It magical because it can do (10^100) + 1 − (10^100) correctly through the miracle of quite a lot of hard maths.
+Perhaps operating systems are less a source of wonder, and more a source of irritation to the wider population?
 
-These are, however, all pretty large topics. You can’t write an operating system, or even a calculator, in  a 90 minute session. I can’t anyway. I am not Ken Thompson.
+Sat navs! They're pretty cool, although obviously they need a lot of specialist hardware, and a whole load of mapping data.
 --
 
-=== Dominion
+== !
+
+cyclestreets image
+
+[NOTE.speaker]
+--
+Here's a satnav in action - it's getting real time GPS updates, so it's able to show position, heading, and speed (to within a couple of metres, so Heisenberg bugs are not an issue). We've got a map data, so we know how far to the next turning and which way we need to turn, how much of the journey distance is left, how much of the journey we've already covered and how quickly so it can calculate how long it'll take to arrive.
+
+Lots of games stuff is pretty amazing - I'm not just talking about graphics rendering, but things like in-game AI.
+--
+
+== !
 
 image::images/Dominion.jpg[]
 
@@ -62,9 +73,16 @@ The computer opponents are really good, particularly because they will play the 
 It's terrific. I have no idea how it does it, it's just great.
 --
 
-=== CycleStreets LiveRide
+== !
 
-something about satnavs here
+image::images/calculator.png[]
+
+[NOTE.speaker]
+--
+Even the more mundane stuff can be fascinating, once you know about it. There's  an incredible article about Hans Boehm's calculator app. It magical because it can do (10^100) + 1 − (10^100) correctly through the miracle of quite a lot of hard maths.
+
+These are, however, all pretty large topics. You can’t write an operating system, or even a calculator, in  a 90 minute session. I can’t anyway. I am not Ken Thompson.
+--
 
 == !
 
