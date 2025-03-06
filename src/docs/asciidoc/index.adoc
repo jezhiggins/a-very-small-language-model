@@ -214,6 +214,7 @@ A random process in which the transition probability only depends on where you a
 * _probability of each event depends only on the state attained in the previous event_ -  what happens next depends only on where we are now, not on how we got here, the future is independent of the past
 
 * it's called a Markov chain for Andrey Markov, who was a Russian mathematician who did a lot of work on stochastic processes around the turn of the 20th Century - 1856 to 1922.
+
 --
 
 == !
@@ -377,6 +378,21 @@ Try again, start at "hello". Pick a number. Move to "world"
 Try again, start at "hello". Pick a number. Move to "there"
 
 And lo, we algorithmic text generation. I mean, it's not huge, but it's not nothing.
+
+*So that's it right? End of talk.*
+
+I'd buy you all a drink but I'm not sure I can afford it at Bristol prices.
+
+What's the missing step here?
 --
 
+== !
 
+[.big]#How do we know what the probabilities are?#
+
+[NOTE.speaker]
+--
+How do we know what the probabilities are?
+
+Also, even before that, how do we know what the words are?
+--
