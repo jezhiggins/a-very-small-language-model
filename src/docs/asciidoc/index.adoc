@@ -101,6 +101,10 @@ We are all, of course, familiar with how phone keyboards in particular, and more
 The first time I encountered next word prediction was in late 1991 or early 1992, in a piece of schools' software. It was, for all intents and purposes, a word processor, and it was intended to help children with specific learning difficulties (dyspraxia, dysgraphia, dyslexia, or whatever) write more easily. As you typed, it popped up a selection of suggested words and you could just pick them off the list. I think it would also suggest next words. Commonplace these days, but really quite startling, even slightly spooky and magical, if you've never seen it before.
 
 Now, here was a keyboard rebranding “next word prediction” as “AI assistance”. This is an attempt to group this technology in the same bucket as the ChatGPTs and the Claudes and what have you. It's trying to stoke up the idea that text prediction is a hard problem, something best left to the big brains at Google or Apple or Microsoft with their shiny offices and free lunches in Silicon Valley and Redmond.
+
+Now, I don't know about you, and with respect to Anastasia, I think our general experience of the AI chatbots has not been magical. Quite the contrary.
+
+These gys (and you know it's guys) are underselling text prediction :)
 --
 
 == !
@@ -114,9 +118,15 @@ image::images/Acorn_BBC_Master_Series_Transparent.png[]
 
 [NOTE.speaker]
 --
-But, hang on, if a BBC Master system could do this 35 years ago, how hard could it be?
+So, I thought, if a BBC Master system could do this 35 years ago, how hard could it be?
 
-Can we build one in an hour?
+Could I recreate the magic?
+
+And
+
+I'm not quite sure where this came from, but I think it's because I'd just sat down to watch a FIH ProLeague hockey match, so I was trying to do it before the end of the game.
+
+Can it be done in an hour?
 --
 
 == !
