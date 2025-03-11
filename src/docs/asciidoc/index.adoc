@@ -229,22 +229,18 @@ A random process in which the transition probability only depends on where you a
 
 == !
 
-[graphviz, layout=sfdp, width=600]
+[plantuml, state-diagram-1, svg, width=600]
 ----
-digraph finite_state_machine {
-	fontname="Helvetica,Arial,sans-serif"
-	node [fontname="Helvetica,Arial,sans-serif"]
-	edge [fontname="Helvetica,Arial,sans-serif"]
-	rankdir=LR;
-	node [shape = circle] B A C;
- 	A -> C [label = "0.6"];
-	A -> B [label = "0.4"];
-    B -> C [label = "0.3"];
-    B -> A [label = "0.7"];
-    C -> B [label = "0.4"];
-    C -> A [label = "0.4"];
-    C -> C [label = "0.2"];
-}
+object A
+object B
+object C
+A -r-> B : 0.4
+A --> C : 0.6
+B --> A : 0.7
+B --> C : 0.3
+C --> A : 0.4
+C --> B : 0.4
+C --> C : 0.2
 ----
 
 [NOTE.speaker]
@@ -279,71 +275,59 @@ How do we apply Markov chains to text generation?
 
 == !
 
-[graphviz, layout=sfdp, width=600]
+[plantuml, state-diagram-2, svg, width=600]
 ----
-digraph finite_state_machine {
-	fontname="Helvetica,Arial,sans-serif"
-	node [fontname="Helvetica,Arial,sans-serif"]
-	edge [fontname="Helvetica,Arial,sans-serif"]
-	rankdir=LR;
-	node [shape = circle] B A C;
- 	A -> C [label = "0.6"];
-	A -> B [label = "0.4"];
-    B -> C [label = "0.3"];
-    B -> A [label = "0.7"];
-    C -> B [label = "0.4"];
-    C -> A [label = "0.4"];
-    C -> C [label = "0.2"];
-}
+object A
+object B
+object C
+A -r-> B : 0.4
+A --> C : 0.6
+B --> A : 0.7
+B --> C : 0.3
+C --> A : 0.4
+C --> B : 0.4
+C --> C : 0.2
 ----
-
 == !
 
-[graphviz, layout=sfdp, width=600]
+
+[plantuml, state-diagram-3, svg, width=600]
 ----
-digraph finite_state_machine {
-	fontname="Helvetica,Arial,sans-serif"
-	node [fontname="Helvetica,Arial,sans-serif"]
-	edge [fontname="Helvetica,Arial,sans-serif"]
-	rankdir=LR;
-	node [shape = circle] B A C;
-    A [label = "hello"];
- 	A -> C [label = "0.6"];
-	A -> B [label = "0.4"];
-    B -> C [label = "0.3"];
-    B -> A [label = "0.7"];
-    C -> B [label = "0.4"];
-    C -> A [label = "0.4"];
-    C -> C [label = "0.2"];
-}
+object A
+A : hello
+object B
+object C
+A -r-> B : 0.4
+A --> C : 0.6
+B --> A : 0.7
+B --> C : 0.3
+C --> A : 0.4
+C --> B : 0.4
+C --> C : 0.2
 ----
 
 [NOTE.speaker]
 --
-Well, what if instead of state A we had "hello"
+Well, what if instead of state A was associated with "hello"
 --
 
 
 == !
 
-[graphviz, layout=sfdp, width=600]
+[plantuml, state-diagram-4, svg, width=600]
 ----
-digraph finite_state_machine {
-	fontname="Helvetica,Arial,sans-serif"
-	node [fontname="Helvetica,Arial,sans-serif"]
-	edge [fontname="Helvetica,Arial,sans-serif"]
-	rankdir=LR;
-	node [shape = circle] B A C;
-    A [label = "hello"];
-    B [label = "there"];
- 	A -> C [label = "0.6"];
-	A -> B [label = "0.4"];
-    B -> C [label = "0.3"];
-    B -> A [label = "0.7"];
-    C -> B [label = "0.4"];
-    C -> A [label = "0.4"];
-    C -> C [label = "0.2"];
-}
+object A
+A : hello
+object B
+B : there
+object C
+A -r-> B : 0.4
+A --> C : 0.6
+B --> A : 0.7
+B --> C : 0.3
+C --> A : 0.4
+C --> B : 0.4
+C --> C : 0.2
 ----
 
 [NOTE.speaker]
@@ -354,30 +338,27 @@ Instead of state B we had "there"
 
 == !
 
-[graphviz, layout=sfdp, width=600]
+[plantuml, state-diagram-5, svg, width=600]
 ----
-digraph finite_state_machine {
-	fontname="Helvetica,Arial,sans-serif"
-	node [fontname="Helvetica,Arial,sans-serif"]
-	edge [fontname="Helvetica,Arial,sans-serif"]
-	rankdir=LR;
-	node [shape = circle] B A C;
-    A [label = "hello"];
-    B [label = "there"];
-    C [label = "world"];
- 	A -> C [label = "0.6"];
-	A -> B [label = "0.4"];
-    B -> C [label = "0.3"];
-    B -> A [label = "0.7"];
-    C -> B [label = "0.4"];
-    C -> A [label = "0.4"];
-    C -> C [label = "0.2"];
-}
+object A
+A : hello
+object B
+B : there
+object C
+C : world
+A -r-> B : 0.4
+A --> C : 0.6
+B --> A : 0.7
+B --> C : 0.3
+C --> A : 0.4
+C --> B : 0.4
+C --> C : 0.2
 ----
+
 
 [NOTE.speaker]
 --
-And instead of state C, we had, of course, Brian Kernighan approved word "world"
+And instead of state C, we had, of course, the Brian Kernighan approved word "world"
 
 So, if we start at "hello", we might transition to, aka generate the next word, "there", or we might generate "world".
 
