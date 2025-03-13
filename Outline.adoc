@@ -126,7 +126,7 @@ For my purposes I used a corpus I had to hand, which was a download of all my Ma
 
 We have our corpus. How do we use it to train our chain?
 
-Well, it's really quite simple. We just look at each word in turn, and see what comes after it. Now some following words will occur more than once, so we keep a running count of those occurrances. Once we've read our whole corpus, we will have a list of all the words, and which words come after them.
+Well, it's really quite simple. We just look at each word in turn, and see what comes after it. Now some following words will occur more than once, so we keep a running count of those occurrences. Once we've read our whole corpus, we will have a list of all the words, and which words come after them.
 
 <simple example walk though>
 
