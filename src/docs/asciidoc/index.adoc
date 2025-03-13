@@ -121,12 +121,18 @@ image::images/Acorn_BBC_Master_Series_Transparent.png[]
 So, I thought, if a BBC Master system could do this 35 years ago, how hard could it be?
 
 Could I recreate the magic?
+--
 
-And
+== !
 
-I'm not quite sure where this came from, but I think it's because I'd just sat down to watch a FIH ProLeague hockey match, so I was trying to do it before the end of the game.
+[.big]#In an hour?#
 
-Can it be done in an hour?
+[NOTE.speaker]
+--
+
+I'm not quite sure where this came from, but I'd just sat down to watch  a terrifically good FIH ProLeague hockey match at the same time. International hockey matches are 60 minutes long, so maybe that was it.
+
+Next ProLeague hockey is the 7 June btw - Spain-Argentina double header, then Netherlands-Australia women from the Wagener in Amstelveen. Should all be cracking. I'm predicting Spain women, Spain men, Netherlands women (never bet against the Dutch women) btw. Point is, no such distractions today - only distractions of my own making.
 --
 
 == !
@@ -396,3 +402,5 @@ Also, even before that, how do we know what the words are?
 --
 What we need is a model, a model of, in our case, English as she is spoke.
 --
+
+

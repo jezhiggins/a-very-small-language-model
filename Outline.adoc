@@ -116,19 +116,31 @@ I mean, it's not nothing, but you get the idea.
 
 == Building the chain
 
+To build the model, to drive the chain, we need first need a body of text - a corpus, as it is called in the text processing trade.
+
+Now, formally, a text corpus is large and systematic. For example the Corpus of London Teenage Speech is a set of samples of spoken English, collected in 1993 from recorded and transcribed conversations by teenagers between the ages of 13 and 17. It's about half a million words, and contains 67 examples of the word 'bum'.
+
+For my purposes I used a corpus I had to hand, which was a download of all my Mastodon toots.
+
 == Training the chain
 
-== Sliding windows
+We have our corpus. How do we use it to train our chain?
 
-one token, vs two tokens, etc
+Well, it's really quite simple. We just look at each word in turn, and see what comes after it. Now some following words will occur more than once, so we keep a running count of those occurrances. Once we've read our whole corpus, we will have a list of all the words, and which words come after them.
 
-== Choosing a corpus
+<simple example walk though>
+
+== Generate some toots
 
 == Austenesque
 
 == Sherlockian
 
 == JavaScript-a-go-go
+
+== Sliding windows
+
+one token, vs two tokens, etc
 
 == As you type
 
