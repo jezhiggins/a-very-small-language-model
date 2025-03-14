@@ -40,6 +40,10 @@ asciidoctorRevealJs {
   baseDirFollowsSourceDir()
 
   resources {
+    from("${sourceDir}/files") {
+      include '**'
+      into 'files'
+    }
     from("${sourceDir}/images") {
       include '**'
       into 'images'
