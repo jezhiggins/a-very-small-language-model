@@ -11,6 +11,9 @@ Jez Higgins, jez@jezuk.co.uk
 :revealjs_slideNumber: c/t
 :revealjs_showSlideNumber: speaker
 
+[background-image="images/title-card.png"]
+== !
+
 == !
 
 [big]*A Very Small Language Model*
@@ -218,7 +221,10 @@ I did send him another message, but the last time I said a naughty word during a
 
 [quote]
 --
-A Markov chain is a stochastic process describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event.
+A Markov chain is a stochastic process +
+describing a sequence of possible events +
+in which the probability of each event depends +
+only on the state attained in the previous event.
 --
 
 [NOTE.speaker]
