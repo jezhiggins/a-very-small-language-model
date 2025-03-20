@@ -1,0 +1,95 @@
+
+== !
+
+.chain.mjs
+[source, javascript]
+----
+import {make_followers} from "./followers.mjs";
+
+class Chain {
+  #tokens = new Map()
+
+  add(token, follower) {
+    const followers = this.#tokens.get(token) ?? make_followers()
+    followers.add(follower)
+    this.#tokens.set(token, followers)
+  }
+
+  predict(token, weight = Math.random()) {
+    const followers = this.#tokens.get(token)
+    return followers.select(weight)
+  }
+}
+
+function make_chain() {
+  return new Chain()
+}
+
+export {make_chain}
+----
+
+== !
+
+.followers.mjs
+[source,javascript]
+----
+import {Follower} from './follower.mjs'
+
+class Followers {
+  #followers = []
+
+  add(token) {
+    const existing = this.#followers.find(f => f.token === token)
+
+    if (!existing)
+      this.#followers.push(new Follower(token))
+    else
+      existing.bump()
+
+    this.#followers.sort((lhs, rhs) => rhs.count - lhs.count)
+  }
+
+  select(weight) {
+    const total = this.#totalCount
+    weight *= total
+    for (const follower of this.#followers) {
+      weight -= follower.count
+      if (weight < 0)
+        return follower.token
+    }
+  }
+
+  get #totalCount() {
+    return this.#followers.reduce((t, f) => t+f.count, 0)
+  }
+}
+
+function make_followers() {
+  return new Followers()
+}
+
+export {make_followers}
+----
+
+== !
+
+.follower.mjs
+[source,javascript]
+----
+class Follower {
+  #token
+  #count
+
+  constructor(token) {
+    this.#token = token
+    this.#count = 1
+  }
+
+  bump() { ++this.#count }
+
+  get token() { return this.#token }
+  get count() { return this.#count }
+}
+
+export {Follower}
+----

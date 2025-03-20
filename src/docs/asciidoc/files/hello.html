@@ -1,0 +1,16 @@
+<html>
+<head></head>
+<body style="background-color: wheat; font-size: larger">
+<pre>
+For text prediction, this means we take the current word - let's say "hello" - and randomly select the word that comes next.But if we randomly select a word, doesn't that just mean it could be anything?Well no, because I skipped over the model part.
+...
+    Before we start predicting we build the model. We read a lot of text and every word we encounter, we make a note of the words that come immediately afterwards. For "hello", let's says that it's followed by "world", "Dolly", and "everybody". Our prediction for the word following "hello" will be one of those three words.
+...
+But we don't just note those following words, we keep track of how often they occur. Imagine "world" follows "hello" three times, "Dolly" once, and "everybody" twice. Our prediction is going to choose one of those three words, but the selection will be weighted by how often they occurred. Here we'd expect "world" to come up more often than "everybody", for example.
+...
+As I read the source text to build my markov chain model, I am tokenising in the simplest way that could possibly work function tokenise(input) {   return input.split(' ') }It's don't get no simpler than that. Trouble is, if we get a blank line - which is of no use - this will still squirt out an empty string, which the chain will tuck away. If there are extra spaces they won't get stripped. Punctuation will pass write through to so "hello", "hello," and "hello!" all end up in the model.
+...
+Let's think about punctuation. Right now "hello", "hello!", etc etc are all different. We could just strip out all punctuation, but I think it'll be more fun to keep them in there are tokens in their own right. Can't think of a neat way to do that.
+</pre>
+</body>
+</html>

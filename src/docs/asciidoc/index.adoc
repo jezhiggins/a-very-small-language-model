@@ -14,10 +14,6 @@ Jez Higgins, jez@jezuk.co.uk
 [background-image="images/title-card.png"]
 == !
 
-== !
-
-[big]*A Very Small Language Model*
-
 [NOTE.speaker]
 --
 Hello friends, I'm Jez and this session is the lightest of the day (perhaps even of the week).
@@ -246,27 +242,31 @@ A random process in which the transition probability only depends on where you a
 object A
 object B
 object C
-A -r-> B : 0.4
-A --> C : 0.6
-B --> A : 0.7
-B --> C : 0.3
+object D
+A --> B : 0.5
+A --> C : 0.25
+A -r-> D : 0.25
+B --> A : 0.2
+B -r-> C : 0.8
 C --> A : 0.4
 C --> B : 0.4
 C --> C : 0.2
+D --> C : 0.5
+D --> A : 0.5
 ----
 
 [NOTE.speaker]
 --
 Here's a little Markov process.
 
-If we start over here in State A, then the probability of us moving to state B is 0.4, and the probability of moving to state C is 0.6. So, B or C? Let's hear it for B! Let's hear it for C!
+If we start over here in State A, then the probability of us moving to state B is 0.5, and the probability of moving to state C is 0.25, and to D is 0.25. So, B or C? Let's hear it for B! Let's hear it for C!
 
 Note that the sum of the state transition probabilities is always 1. Even if we can stay where we are, that's still a transition, still gets its own probability.
 
 We're all programmers, the probability that we didn't even
 notice that this is a discrete-time Markov chain approaches 1. You can build continuous time Markov processes, but I've no idea how you'd actually do that, and it probably involves some kind of fearsome calculus, so let's pretend I never even mentioned it.
 
-So, we have this little state space, that we're randomly and memorylessly mocing around. These have, perhaps surprisingly, a number of real world applications
+So, we have this little state space, that we're randomly and memorylessly moving around. These have, perhaps surprisingly, a number of real world applications
 
 * Including in macroeconomics - stock price equilibrium, for example, and various Monte Carlo simulations
 * Markov chains can be used to model interaction between state actors. We may have to reevaluate that in the light of recent events, but it's been done.
@@ -292,14 +292,38 @@ How do we apply Markov chains to text generation?
 object A
 object B
 object C
-A -r-> B : 0.4
-A --> C : 0.6
-B --> A : 0.7
-B --> C : 0.3
+object D
+A --> B : 0.5
+A --> C : 0.25
+A -r-> D : 0.25
+B --> A : 0.2
+B -r-> C : 0.8
 C --> A : 0.4
 C --> B : 0.4
 C --> C : 0.2
+D --> C : 0.5
+D --> A : 0.5
 ----
+
+[NOTE.speaker]
+--
+Here's the little state transition diagram we had before. Let's strip it right back.
+--
+
+== !
+
+[plantuml, state-diagram-stripped, svg, width=600]
+----
+object A
+object B
+object C
+object D
+A --> B : 0.5
+A --> C : 0.25
+A -r-> D : 0.25
+----
+
+
 == !
 
 
@@ -309,13 +333,11 @@ object A
 A : hello
 object B
 object C
-A -r-> B : 0.4
-A --> C : 0.6
-B --> A : 0.7
-B --> C : 0.3
-C --> A : 0.4
-C --> B : 0.4
-C --> C : 0.2
+object D
+A --> B : 0.5
+A --> C : 0.25
+A -r-> D : 0.25
+
 ----
 
 [NOTE.speaker]
@@ -333,20 +355,16 @@ A : hello
 object B
 B : there
 object C
-A -r-> B : 0.4
-A --> C : 0.6
-B --> A : 0.7
-B --> C : 0.3
-C --> A : 0.4
-C --> B : 0.4
-C --> C : 0.2
+object D
+A -r-> B : 0.5
+A --> C : 0.25
+A --> D : 0.25
 ----
 
 [NOTE.speaker]
 --
 Instead of state B we had "there"
 --
-
 
 == !
 
@@ -357,14 +375,34 @@ A : hello
 object B
 B : there
 object C
-C : world
-A -r-> B : 0.4
-A --> C : 0.6
-B --> A : 0.7
-B --> C : 0.3
-C --> A : 0.4
-C --> B : 0.4
-C --> C : 0.2
+C : everybody
+object D
+A -r-> B : 0.5
+A --> C : 0.25
+A --> D : 0.25
+----
+
+[NOTE.speaker]
+--
+On state C we had "everybody"
+--
+
+
+== !
+
+[plantuml, state-diagram-6, svg, width=600]
+----
+object A
+A : hello
+object B
+B : there
+object C
+C : everybody
+object D
+D : world
+A -r-> B : 0.5
+A --> C : 0.25
+A --> D : 0.25
 ----
 
 
@@ -396,21 +434,79 @@ What's the missing step here?
 [NOTE.speaker]
 --
 How do we know what the probabilities are?
-
-Also, even before that, how do we know what the words are?
 --
 
 == !
 
-[.big]#A model#
+[source, javascript]
+----
+import {make_chain} from "../src/chain.mjs";
+
+const chain = make_chain()
+
+chain.add('hello', 'there')
+chain.add('hello', 'everyone')
+chain.add('hello', 'there')
+chain.add('hello', 'world')
+----
 
 [NOTE.speaker]
 --
-What we need is a model, a model of, in our case, English as she is spoke.
+Here's some code.
 
-And to make a model, we need something to make a model of.
+Within this `chain` object, we've put together a little data structure that looks somwething like this.
+--
 
-We need some text, or a corpus, as it's known in the natural language processing trade.
+== !
+
+[source]
+----
+hello  ->  (world, 1)
+           (there, 2)
+           (everyone, 1)
+----
+
+[NOTE.speaker]
+--
+We can see that looks quite similar to our little state transition diagram we had before, except instead of probabilities we've got occurrence counts.
+--
+
+== !
+
+[source, javascript]
+----
+for (let i = 0; i !== 10; ++i)
+  console.log("hello " + chain.predict("hello"));
+----
+
+image::images/hello-predict.png[]
+
+[NOTE.speaker]
+--
+When we call `predict`, we pluck some magic number, convert those occurrences into probabilities, and lo and behold, out come some greetings.
+
+This is obviously as almost minimal as you can get. We have one starting word, and all the following words are terminal.
+
+We barely even have any code
+--
+
+include::chain.adoc[]
+
+== !
+
+[source, javascript]
+----
+for (let i = 0; i !== 10; ++i)
+  console.log("hello " + chain.predict("hello"));
+----
+
+image::images/hello-predict.png[]
+
+[NOTE.speaker]
+--
+So, how do we make this a bit more that a simple greetings generator?
+
+We need some more words. We need a Text Corpus
 --
 
 == !
@@ -419,11 +515,11 @@ We need some text, or a corpus, as it's known in the natural language processing
 
 [NOTE.speaker]
 --
-Now, in more formal terms, a text corpuses large and systematic - they're aiming to capture something particular.
+Now, in more formal terms, a text corpuses large and systematic. They're gathered using some system, some methodology - for a particlarly time period, or geographic location, population, or some combination thereof.
 
-For example the Corpus of London Teenage Speech is a set of samples of spoken English, collected in 1993 from recorded and transcribed conversations by teenagers between the ages of 13 and 17. It's about half a million words, and contains 67 examples of the word 'bum'.
+For example the Corpus of London Teenage Speech is a set of samples of spoken English, collected in 1993 from recorded and transcribed conversations by teenagers between the ages of 13 and 17. It's about half a million words, and contains 67 examples of the word 'bum', which I don't think is enough.
 
-For my purposes I used a text corpus I had to hand
+For my purposes I was rather less formal, and used a text corpus I happened to have to hand.
 --
 
 == !
@@ -441,7 +537,7 @@ My Mastodon archive.
 
 [NOTE.speaker]
 --
-Here it is. 2384 scintillating lines, containing 46576 words.
+Here it is. 2384 scintillating lines, containing 46576 individual words.
 
 I've cleaned it up a little to take out other people's handles, and, erm, remove the stronger swearwords -
 
@@ -551,11 +647,11 @@ function* tokenise(input) {
 --
 Here we are - this is the tokeniser I put together.
 
-For those of you not familiar, this `function*` means this is a JavaScript generator. If you know Python generators, it's the same but with more curly brackets. It's akin to coroutine - you can yielf values, then continue on from there.
+For those of you not familiar, this `function*` means this is a JavaScript generator. If you know Python generators, it's the same but with more curly brackets. It's akin to coroutine - you can yield values, then continue on from there.
 
-`streamer` just puts a little `next`/`hasNext` face on the input, so we can loop over it more easi
+`streamer` just puts a little `next`/`hasNext` face on the input, so we can loop over it more easily.
 
-We start by discarding whitespace, then gather up anything that looks like it could be part of a word and yield that, then if's any punctuation yield that, and round and round until we run out, yielding up a token at a time.
+We start by discarding whitespace, then gather up anything that looks like it could be part of a word and yield that, then if there's any punctuation yield that, and round and round until we run out, yielding up a token at a time.
 
 If we put another little layer on top, we can return pairs of words ...
 --
@@ -605,6 +701,23 @@ So, we have our pairs of tokens - one at the front, one at the back - are we're 
 
 == !
 
+[source,javascript]
+----
+const chain = make_chain();
+
+for await (const [word, follower] of wordPairs('./data/toots.txt'))
+  chain.add(word, follower);
+----
+
+[NOTE.speaker]
+--
+We're reading all our pairs of words, we're popping them into the chain, to build up a big list...
+
+So, what does that give us.
+--
+
+== !
+
 [code]
 ----
 is      ->  (a, 59)
@@ -623,9 +736,88 @@ grateful -> (to, 1)
 
 [NOTE.speaker]
 --
-And so on, for another 8379 tokens.  8379 seems like a lot, but I can only assume there are a lot of a) names and b) horrific misspellings in there.
+Our data structure now looks something like this.
+
+And so on, for another 8379 tokens.  8379 seems like a lot, but I can only assume there are a lot of a) names and b) horrific misspellings in there.  There are approximately 35000 state transitions between all those tokens. I tried to get PlantUML to draw the diagram, but I gave up after 24 hours.
 
 All this is clear, yes? We can read our source corpus, generating a series of token pairs, producing a big list of each unique token we encounter, together with the counts of the tokens that follow.
 
-And this is our language model.
+If we now take our starter word, "hello", and use that generator our next word, we can take the new word and plug it back in, to get another word, and so on and so on.
+--
+
+== !
+
+[source,javascript]
+----
+const tokens = ['hello']
+
+for (let i = 0; i !== 12; ++i)
+  tokens.push(chain.predict(tokens[tokens.length - 1]));
+
+console.log(tokens.join(' '));
+----
+
+[NOTE.speaker]
+--
+So that's what we're doing here. We've our starter word, hello, and each time we go round this loop, we use that last word in the array to generate a new word, which we push onto the array.
+
+Then we print it
+--
+
+=== !
+
+[source,javascript]
+----
+const tokens = ['hello']
+
+for (let i = 0; i !== 12; ++i) {
+  const current_word = tokens[tokens.length - 1];
+  const next_word = chain.predict(current_word);
+  tokens.push(next_word);
+}
+
+console.log(tokens.join(' '));
+----
+
+[NOTE.speaker]
+--
+Would love a pipeline operator here.
+--
+
+== !
+
+image::images/predict-toots.png[]
+
+[NOTE.speaker]
+--
+And we get this nonsense.
+
+We know this is just a random spray of words, but there are little phrases and things that look almost plausible in there.
+
+What else do you notice about it?
+
+Lots of punctuation after hello. Turns out hello is a really bad starter word for this particular corpus. I've talked a lot on Mastodon about the code I was writing, and about this talk. And my favourite word was "hello"
+--
+
+[background-iframe="files/hello.html"]
+== !
+
+[NOTE.speaker]
+--
+And my favourite example word was "hello". I am, it seems, nothing if not predictable
+
+This is interesting, right? This, I'd suggest, is unexpected because hello seems like a perfectly normal word, but in this corpus, it has a certain quirk, a certain characteristic.
+
+Because, our little sliding of word pairs, our occurrence counts have captured something about this body of text.
+--
+
+== !
+
+[.big]#A model#
+
+[NOTE.speaker]
+--
+We have, in fact, built a model.
+
+A model of the particular dialect of English I speak on Mastodon.
 --
