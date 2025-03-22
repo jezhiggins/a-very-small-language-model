@@ -896,7 +896,7 @@ To give you a little bit of context, we're into the 4th quarter of the match now
 
 == !
 
-Is this the code phrase to activate a sleeper agent?
+[.big]#Is this the code phrase to activate a sleeper agent?#
 
 [NOTE.speaker]
 --
@@ -911,7 +911,7 @@ We know, for example, that this question mark indicates the end of a sentence. W
 
 == !
 
-!Start! Is this the code phrase to activate a sleeper agent? !End!
+[.big]#!Start! Is this the code phrase to activate a sleeper agent? !End!#
 
 [NOTE.speaker]
 --
