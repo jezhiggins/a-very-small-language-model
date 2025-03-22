@@ -136,12 +136,6 @@ Well, it's really quite simple. We just look at each word in turn, and see what 
 
 == Sherlockian
 
-== JavaScript-a-go-go
-
-== Sliding windows
-
-one token, vs two tokens, etc
-
 == As you type
 
 == These *are* language models
@@ -149,6 +143,12 @@ one token, vs two tokens, etc
 Very small language models, very simple language models, but nonetheless, they capture some essentiall essence of the source corpuses (corpi? no).
 
 === How could we make them "better" models
+
+start and end of lines
+
+start and end of speech
+
+formatting
 
 === Stemming
 
@@ -171,6 +171,12 @@ These represent rather more work that my "can I do this in the time it takes to 
 If we had some nice Austen, and some ok Holmes, and some, well, some JavaScript, if we put them all together, it'll be even better right?
 
 But, no
+
+== Sliding windows
+
+one token, vs two tokens, etc
+
+accidental source recovery
 
 == Even small systems get the blues
 

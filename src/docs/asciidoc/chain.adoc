@@ -45,9 +45,7 @@ class Followers {
       this.#followers.push(new Follower(token))
     else
       existing.bump()
-
-    this.#followers.sort((lhs, rhs) => rhs.count - lhs.count)
-  }
+ }
 
   select(weight) {
     const total = this.#totalCount

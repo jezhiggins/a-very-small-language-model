@@ -93,17 +93,26 @@ So, about this time last year, I was poking around on my phone doing something o
 
 Obviously, I said no, because honestly, how much productivity boosting and creativity unlocking do you to send WhatsApp messages? And, in any case, it can’t do that.
 
-However, it did get me thinking. It did! Really - I'm not giving you some kind of trite homily here - I promise you it did.
+We are all, of course, familiar with how phone keyboards in particular, and more widely the general act of typing things on a computer, first of all act as spelling correction on the word you're typing, but also to prompt you with the next word _you might want to type_.
 
-We are all, of course, familiar with how phone keyboards in particular, and more widely the general act of typing things on a computer, offer up suggestions for the word you're currently typing, and also the next word you might want to type.
+You might have occasionally played that game where you just accept the suggestions it gives you ...
+--
 
-The first time I encountered next word prediction was in late 1991 or early 1992, in a piece of schools' software. It was, for all intents and purposes, a word processor, and it was intended to help children with specific learning difficulties (dyspraxia, dysgraphia, dyslexia, or whatever) write more easily. As you typed, it popped up a selection of suggested words and you could just pick them off the list. I think it would also suggest next words. Commonplace these days, but really quite startling, even slightly spooky and magical, if you've never seen it before.
+== !
+
+image::images/just-accept.png[]
+
+[NOTE.speaker]
+--
+The first time I encountered next word prediction was in late 1991 or early 1992, in a piece of schools' software. It was, for all intents and purposes, a word processor, and it was intended to help children with specific learning difficulties (dyspraxia, dysgraphia, dyslexia, or whatever) write more easily. As you typed, it popped up a selection of suggested words and you could just pick them off the list. It could also suggest next words.
+
+Commonplace these days, but really quite startling, even slightly spooky and magical, if you've never seen it before.
 
 Now, here was a keyboard rebranding “next word prediction” as “AI assistance”. This is an attempt to group this technology in the same bucket as the ChatGPTs and the Claudes and what have you. It's trying to stoke up the idea that text prediction is a hard problem, something best left to the big brains at Google or Apple or Microsoft with their shiny offices and free lunches in Silicon Valley and Redmond.
 
 Now, I don't know about you, and with respect to Anastasia, I think our general experience of the AI chatbots has not been magical. Quite the contrary.
 
-These gys (and you know it's guys) are underselling text prediction :)
+These guys (and you know it's guys) are overselling text prediction :)
 --
 
 == !
@@ -129,9 +138,9 @@ Could I recreate the magic?
 [NOTE.speaker]
 --
 
-I'm not quite sure where this came from, but I'd just sat down to watch  a terrifically good FIH ProLeague hockey match at the same time. International hockey matches are 60 minutes long, so maybe that was it.
+I'm not quite sure where this came from, but I'd just sat down to watch a FIH ProLeague hockey match at the same time. Can't remember which one - there was a lot of hockey last February, but I remember it was really good. Possibly it was India vs Spain, which went to 8-7 in shuffles after a 2-2 draw. Anyway. International hockey matches are 60 minutes long, so maybe that was it.
 
-Next ProLeague hockey is the 7 June btw - Spain-Argentina double header, then Netherlands-Australia women from the Wagener in Amstelveen. Should all be cracking. I'm predicting Spain women, Spain men, Netherlands women (never bet against the Dutch women) btw. Point is, no such distractions today - only distractions of my own making.
+Next ProLeague hockey is the 7 June btw - when there is frankly too much on. Spain-Argentina double header from Valencia, then Netherlands-Australia women and Netherlands-India men from the Wagener in Amstelveen. Should all be amazing. I'm predicting Spain women, Spain men, Netherlands women (never bet against the Dutch women), and, oh, India. Point is, no such distractions today - only distractions of my own making.
 --
 
 == !
@@ -519,7 +528,9 @@ Now, in more formal terms, a text corpuses large and systematic. They're gathere
 
 For example the Corpus of London Teenage Speech is a set of samples of spoken English, collected in 1993 from recorded and transcribed conversations by teenagers between the ages of 13 and 17. It's about half a million words, and contains 67 examples of the word 'bum', which I don't think is enough.
 
-For my purposes I was rather less formal, and used a text corpus I happened to have to hand.
+Now, I don't have access to any of those academic corpuses, nor did I really just want to go off and download large chunks of the publically available internet.
+
+For my purposes I was rather less formal, and used a text corpus I was able to get full and unconditional permission to use.
 --
 
 == !
@@ -528,7 +539,9 @@ image::images/toots.png[]
 
 [NOTE.speaker]
 --
-My Mastodon archive.
+From myself!
+
+I used my Mastodon archive.
 --
 
 [background-iframe="files/toots.html"]
@@ -537,7 +550,7 @@ My Mastodon archive.
 
 [NOTE.speaker]
 --
-Here it is. 2384 scintillating lines, containing 46576 individual words.
+Here it is. 2384 scintillating lines, every one a certified zinger, containing 46576 individual words.
 
 I've cleaned it up a little to take out other people's handles, and, erm, remove the stronger swearwords -
 
@@ -548,15 +561,15 @@ So, how do we build a model from this?
 
 == !
 
-[.small]#The last thing I did today was delete a file called 'burp.md'#
+The last thing I did today was delete a file called 'burp.md'
 
 I don't think this is quite as reassuring as you think it is 😉
 
-[.big]#Is this the code phrase to activate a sleeper agent?#
+Is this the code phrase to activate a sleeper agent?
 
 1 or infinity, yea. Those are the only two numbers that matter.
 
-[.small]#As long as there's plenty of space to clop around on your horse, who really cares?#
+As long as there's plenty of space to clop around on your horse, who really cares?
 
 [NOTE.speaker]
 --
@@ -568,39 +581,39 @@ More precisely pairs of tokens.
 
 == !
 
-[.big]#pass:[<u>Is this</u>] the code phrase to activate a sleeper agent?#
+[.big]#pass:[<u>Is, this</u>] the code phrase to activate a sleeper agent?#
 
 == !
 
-[.big]#Is pass:[<u>this the</u>] code phrase to activate a sleeper agent?#
+[.big]#Is pass:[<u>this, the</u>] code phrase to activate a sleeper agent?#
 
 == !
 
-[.big]#Is this pass:[<u>the code</u>] phrase to activate a sleeper agent?#
+[.big]#Is this pass:[<u>the, code</u>] phrase to activate a sleeper agent?#
 
 == !
 
-[.big]#Is this the pass:[<u>code phrase</u>] to activate a sleeper agent?#
+[.big]#Is this the pass:[<u>code, phrase</u>] to activate a sleeper agent?#
 
 == !
 
-[.big]#Is this the code pass:[<u>phrase to</u>] activate a sleeper agent?#
+[.big]#Is this the code pass:[<u>phrase, to</u>] activate a sleeper agent?#
 
 == !
 
-[.big]#Is this the code phrase pass:[<u>to activate</u>] a sleeper agent?#
+[.big]#Is this the code phrase pass:[<u>to, activate</u>] a sleeper agent?#
 
 == !
 
-[.big]#Is this the code phrase to pass:[<u>activate a</u>] sleeper agent?#
+[.big]#Is this the code phrase to pass:[<u>activate, a</u>] sleeper agent?#
 
 == !
 
-[.big]#Is this the code phrase to activate pass:[<u>a sleeper</u>] agent?#
+[.big]#Is this the code phrase to activate pass:[<u>a, sleeper</u>] agent?#
 
 == !
 
-[.big]#Is this the code phrase to activate a pass:[<u>sleeper agent</u>]?#
+[.big]#Is this the code phrase to activate a pass:[<u>sleeper, agent</u>]?#
 
 [NOTE.speaker]
 --
@@ -611,7 +624,7 @@ Up to you. I chose to have it as a token of its own
 
 == !
 
-[.big]#Is this the code phrase to activate a sleeper pass:[<u>agent ?</u>]#
+[.big]#Is this the code phrase to activate a sleeper pass:[<u>agent, ?</u>]#
 
 [NOTE.speaker]
 --
@@ -682,9 +695,8 @@ async function* wordPairs(filename) {
       yield [prev, token];
       prev = token;
     }
-
-    yield [prev, null];
   }
+  yield [prev, null];
 }
 ----
 
@@ -808,7 +820,7 @@ And my favourite example word was "hello". I am, it seems, nothing if not predic
 
 This is interesting, right? This, I'd suggest, is unexpected because hello seems like a perfectly normal word, but in this corpus, it has a certain quirk, a certain characteristic.
 
-Because, our little sliding of word pairs, our occurrence counts have captured something about this body of text.
+Because, our little sliding of word pairs, our occurrence counts have captured something about this body off text.
 --
 
 == !
@@ -821,3 +833,53 @@ We have, in fact, built a model.
 
 A model of the particular dialect of English I speak on Mastodon.
 --
+
+== !
+
+image::images/toots-the.png[]
+
+[NOTE.speaker]
+--
+Here's the same code, the same text rerun with a different seed word - 'the'.  Now, we'd expect this to give some quite different results, because of the nature of the word we've chosen.
+
+What if we start with a different body of text?
+--
+
+== !
+
+image::images/austen-toot.png[]
+
+[NOTE.speaker]
+--
+I still haven't gone off and downloaded large chunks of the public internet. Here, I've used the text of Pride and Prejudice. I've never read it, but my computer has read it for me, and produced these little extracts.
+
+I still haven't gone off and downloaded large chunks of the public internet. Here, I've used the text of Pride and Prejudice. I've never read it, but my computer has read it for me, and produced these little extracts. I think I've got the gist.
+
+Pride and Prejudice was published in 1813, so the word hello doesn't appear in the text, but the works splendidly.
+
+Very different feel, right? Pride and Prejudice has about three times as many words as my Mastodon archive, so this is a much bigger model. I don't know necessarily it's more complex - whether Austen's vocabulary is bigger than mine, or her sentence structure more complex, or whatever.
+
+What am I doing? Comparing myself to Jane Austen!
+
+But, could we?
+
+If we had an unknown body of text, could we use our models to say "this is more like Jez's internet spoutings" or "this is more like one of the greatest novelists in the English language"?
+--
+
+== !
+
+image::images/must-be-the-truth.png[]
+
+[NOTE.speaker]
+--
+Here's some samples from a third corpus - the text of all the Sherlock Holmes novels and stories.
+
+Again, very different feel, from the previous two, but I think it's not as distinctive. No giveaways - no Watson, no Holmes.
+
+We've taken another big step up in word count - up to 650 thousand words - five times as many as Pride and Prejudice and getting on for 15 times as many words as in my toot archive. But we've almost changed another dimension.
+
+My toots, and Pride and Prejudice represent quite a compressed time frame - everything was written over the course of a few months.
+
+A Study in Scarlet was first published in 1887, while the last Holmes story (or at least the last by Conan Doyle), The Adventure of the Retired Colourman, was published in 1926. So these stories cover a span of 40 years. English usage would have morphed and evolvedin that time, and we know that Conan Doyle's attitude to writing had changed. He tried to pack in Holmes at least twice - that's what the fight with Moriaty at the Reichenbach Falls in The Final Problem was trying to. (Didn't work - subsequently wrote another 30 short stories and 2 novels)
+--
+
