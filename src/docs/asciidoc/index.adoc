@@ -629,7 +629,7 @@ Up to you. I chose to have it as a token of its own
 
 == !
 
-[.big]#Is this the code phrase to activate a sleeper pass:[<u>[agent, ?]</u>]#
+[.big]#Is this the code phrase to activate a sleeper pass:[<u>[agent, ?\]</u>]#
 
 [NOTE.speaker]
 --
