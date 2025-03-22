@@ -949,7 +949,7 @@ A single sentence is ok for a toot, but Jane Austen was a novelist, so here I'm 
 
 And, it kind of does. We've got Mr Darcy in there, we've got questions, I mean look at those semi-colons. She loves a subclause, that Jane Austen.
 
-So putting in these little markers has, I think, quite significantly changes, may improved, our output generation.
+So putting in these little markers has, I think, quite significantly changed, maybe improved, our output generation.
 --
 
 == !
@@ -962,7 +962,7 @@ Here's the Conan Doyle. I'm still not quite sure we'd immediately tag this as de
 
 Obviously, I ran this a few times, and this is typical. Much more direct speech than the Austen, much shorter sentences.
 
-These additional structure is revealing, exposing more of the underlying corpus.
+That little bit of additional structure is revealing, exposing more of the underlying corpus.
 
 What else might we do?
 --
