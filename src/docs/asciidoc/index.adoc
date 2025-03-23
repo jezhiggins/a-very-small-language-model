@@ -960,11 +960,115 @@ image::images/holmesian.png[]
 --
 Here's the Conan Doyle. I'm still not quite sure we'd immediately tag this as derived from Holmes, but it is showing more character I think.
 
-Obviously, I ran this a few times, and this is typical. Much more direct speech than the Austen, much shorter sentences.
+Obviously I ran this a few times, and this is typical. Much more direct speech than the Austen, much shorter sentences.
 
 That little bit of additional structure is revealing, exposing more of the underlying corpus.
 
 What else might we do?
+
+We are moving, by the way, into the largely theoretical portion of the talk. We're deep into the penalty shoot-out now.
 --
 
+== !
 
+[.big]#"My dear Mr Bennet," said his lady to him one day, "have you heard that Netherfield Park is let at last?"#
+
+[NOTE.speaker]
+--
+We've seen the effect of adding just a little bit of additional information into our Markov Chain. We could extend that to include speech, and perhaps also other punctuation - parenthesis, commas & semi-colons.
+
+You could do that relatively simply, I think. You could put start and end speech markers into the chain in the same way as sentence start and end.
+
+When you generate output, you could add an extra kind of meta-state. We're in speech, let's keep going until we hit the end of speech. But you could be a bit smart about that - you don't just have to wait for closing quotes to come out of your random process, you could pick up on commas and full stops too. Again we're exploiting our knowledge of English to improve the output.
+
+Something that occurred to me while writing this is that speech is quite different from prose. Maybe you could have two chains - one to model the prose, one to model speech. When you're building your models - some people might says training you models - you would switch from one to the other as you encounter speech marks. Similarly, you'd the same when you were generating your output. I think that might be quite interesting, and relatively straightforward.
+--
+
+== !
+
+[.big]#He was quiet in his ways, and his habits were regular.#
+
+[NOTE.speaker]
+--
+We could lean even harder into the structure of our language, perhaps by tagging parts of speech.
+
+Pronoun, verb, adjective, preposition, pronoun, noun, conjunction, pronoun, noun, verb, adjective.
+
+If we had information like this available, we could ensure our algorithmic generated output lined up all its pronouns, for instance. If it started with 'we', then we want 'our' later in the sentence
+
+"We were quiet in our ways, and our habits were regular."
+
+We can probably think of ways we could use parts of speech in our text generation. (Make it more poetic - stuff some adjectives in)
+
+Early POS taggers were rules-based. A chap called Eric Brill pioneered this approach the early 90s. I worked on POS tagging in around 2000, and I think I used his code then. More recent parts of speech taggers, use hidden Markov models.
+--
+
+== !
+
+[.big]#Tried explaining that I'm a knowledge worker and thus unqualified to "shift the bags of rubble",#
+
+[NOTE.speaker]
+--
+We could stem, especially if that's supported by parts of speech.
+
+Stemming means reducing to the "stem" - from explaining to explain, worker to work, that kind of thing.
+
+I mentioned making sure out pronouns align in a sentence. If we word stem, as we produce our output we can ensure that our verb cases match up, that our tenses match up.
+
+Again, some stemming approaches are stochastic. Again, this very language dependent - English is quite easy, Arabic very hard.
+--
+
+== !
+
+[.big]#but Natalie just said "yea, yea, expand your CV and shift them"#
+
+[NOTE.speaker]
+--
+I think we could do those things without changing the Markov chain code I showed earlier. Preprocessing and annotating tokens on the way in, yes, postprocessing on the way out, yes, but the bit in the middle would stay the same.
+
+If we're prepared to step away from that, all kinds of other possibilities open up - latent semantic analytics, word2vec, all kinds of exciting things.
+
+Latent semantic analysis is the idea the words with related meanings are clustered together in texts.
+
+word2vec is technique capturing meaning of words based on their surrounding context.
+
+We're moving very much into this takes more time that is available in a season of hockey, let alone just a the one game, but NLP is a fascinating topic.
+
+Before we finish, let's have a look at a couple of things we can do with the code as is.
+
+If we had some nice Austen, and some ok Holmes, and well, my toots, and we put them all together, what would that look like?
+--
+
+== !
+
+image::images/chimera.png[]
+
+[NOTE.speaker]
+--
+It's a mess. It's not really anything.
+
+More is definitely not better here.
+
+I mentioned before that some tokens have very small number of transitions, while others, like a, the, commas, and what-not, have this very large number. As the size of the corpus increases, and the variation within that corpus - we're combiningnow three very different text bodies - the fan-out from a comma justs gets bigger and bigger and bigger, and so, I don't know, the coherence of the output starts to fall off.
+
+Quality here is very subjective. How do you write a fitness function for this?
+--
+
+== Sliding windows
+
+one token, vs two tokens, etc
+
+accidental source recovery
+
+== !
+
+[.big]#Even small systems get the blues#
+
+[NOTE.speaker]
+--
+On the one hand, this is a just a bit of fun. Programming for money is great and all, but it's often quite run of the mill, so if you need to, just bunk off for a couple of hours - noone will notice - and write something fun, something a bit magic. You'll feel better for it.
+
+On the other hand, the title of this talk is obviously an allusion to the AI hype that's swirling and whirling all around us. Even a tiny system like this can display surprising, maybe even convincing, behaviour, but as we feed it more and more text, it actually gets worse and worse. Bigger systems will display even more surprising and convincing behaviour, but as they grab more and more text, it looks like they too will actually get worse and worse.
+
+I've just said programming can be a ton of fun, because it can. We can reach out and explore these incredible problem spaces, and for each problem there's an infinity of solutions. There's this incredible multidimensional space we can shape and travel through, so it can be fun, but it can be dangerous. There are consequences to the things we build too. So, have fun, but let's be careful out there.
+--
