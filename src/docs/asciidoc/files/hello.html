@@ -1,10 +1,10 @@
 <html>
 <head></head>
-<body style="background-color: wheat; font-size: larger">
+<body style="background-color: black; color: wheat; font-size: 32px;">
 <pre>
 For text prediction, this means we take the current word - let's say "hello" - and randomly select the word that comes next.But if we randomly select a word, doesn't that just mean it could be anything?Well no, because I skipped over the model part.
 ...
-    Before we start predicting we build the model. We read a lot of text and every word we encounter, we make a note of the words that come immediately afterwards. For "hello", let's says that it's followed by "world", "Dolly", and "everybody". Our prediction for the word following "hello" will be one of those three words.
+Before we start predicting we build the model. We read a lot of text and every word we encounter, we make a note of the words that come immediately afterwards. For "hello", let's says that it's followed by "world", "Dolly", and "everybody". Our prediction for the word following "hello" will be one of those three words.
 ...
 But we don't just note those following words, we keep track of how often they occur. Imagine "world" follows "hello" three times, "Dolly" once, and "everybody" twice. Our prediction is going to choose one of those three words, but the selection will be weighted by how often they occurred. Here we'd expect "world" to come up more often than "everybody", for example.
 ...

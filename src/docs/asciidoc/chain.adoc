@@ -1,7 +1,6 @@
 
 == !
 
-.chain.mjs
 [source, javascript]
 ----
 import {make_followers} from "./followers.mjs";
@@ -30,7 +29,7 @@ export {make_chain}
 
 == !
 
-.followers.mjs
+
 [source,javascript]
 ----
 import {Follower} from './follower.mjs'
@@ -45,7 +44,7 @@ class Followers {
       this.#followers.push(new Follower(token))
     else
       existing.bump()
- }
+  }
 
   select(weight) {
     const total = this.#totalCount
@@ -71,7 +70,6 @@ export {make_followers}
 
 == !
 
-.follower.mjs
 [source,javascript]
 ----
 class Follower {

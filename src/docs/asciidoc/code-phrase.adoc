@@ -1,0 +1,91 @@
+== !
+
+[.big]#Is this the code +
+phrase to activate +
+a sleeper agent?#
+
+[NOTE.speaker]
+--
+We're going to take each line in turn, and split it into pairs of words.
+
+More precisely pairs of tokens.
+--
+
+
+== !
+
+[.big]#pass:[<u>[Is, this\]</u>] the code +
+phrase to activate +
+a sleeper agent?#
+
+== !
+
+[.big]#Is pass:[<u>[this, the\]</u>] code +
+phrase to activate +
+a sleeper agent?#
+
+== !
+
+[.big]#Is this pass:[<u>[the, code\]</u>] +
+phrase to activate +
+a sleeper agent?#
+
+== !
+
+[.big]#Is this the pass:[<u>[code, </u>] +
+pass:[<u>phrase\]</u>] to activate +
+a sleeper agent?#
+
+== !
+
+[.big]#Is this the code +
+pass:[<u>[phrase, to\]</u>] activate +
+a sleeper agent?#
+
+== !
+
+[.big]#Is this the code +
+phrase pass:[<u>[to, activate\]</u>] +
+a sleeper agent?#
+
+== !
+
+[.big]#Is this the code +
+phrase to pass:[<u>[activate, </u>] +
+pass:[<u>a\]</u>] sleeper agent?#
+
+== !
+
+[.big]#Is this the code +
+phrase to activate +
+pass:[<u>[a, sleeper\]</u>] agent?#
+
+[NOTE.speaker]
+--
+What should we do now? Include the question mark, or not include the question mark? As part of the work, or as a token of its own?
+--
+
+== !
+
+[.big]#Is this the code +
+phrase to activate +
+a pass:[<u>[sleeper, agent\]</u>]?#
+
+[NOTE.speaker]
+--
+Up to you. I chose to have it as a token of its own.
+
+I've used "word" and "token" kind of interchangeably, which is a little bit lax of me. These aren't words in the conventional sense - our chain is not ascribing any meaning to them - they're just arbitrary strings of characters.
+--
+
+== !
+
+[.big]#Is this the code +
+phrase to activate +
+a sleeper pass:[<u>[agent, ?\]</u>]#
+
+[NOTE.speaker]
+--
+Often we think of parsing as quite a sophisticated task. Not so here. It's slightly more sophisticated than splitting on spaces, although not much more.
+--
+
