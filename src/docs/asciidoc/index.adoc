@@ -644,6 +644,8 @@ So we've got our `tokenise` generator splitting out toots into tokens, then we'v
 We are, essentially running a sliding window over our input stream.
 
 So, we have our pairs of tokens - one at the front, one at the back - are we're just going to build a big list of the tokens in the front, with whatever comes after them and, crucially, how many times each of the following tokens occurs
+
+There's actually quite a lot of code here, because JavaScript's standard library is pretty under powered. In {cpp} you could use a slide_view, in Python you use a couple of iterators and a zip. Got to do it slightly long hand here.
 --
 
 == !
@@ -949,6 +951,21 @@ Again, some stemming approaches are stochastic. Again, this language dependent -
 
 [NOTE.speaker]
 --
+We can also continue to train it. Building the model needn't be a one-off exercise like I've been showing here. We can continue to add new entries into our chain - this is what our keyboards are doing as we type, so the word lists and the probabilities change over time.
+
+We could reinforce the model - say yes, we like this output more than we like that output. This is what we're when we select a suggestion that our keyboard gives us - we're tweaking the weights, nudging the probabilities to tilt things a little more towards the word we've chosen.
+
+We could add a time element, either by preferring newing additions to our model, or by aging out older entries. Or both. After all, if Elizabeth didn't marry Mr Darcy, she'd probably her devices to stop sticking his name in front of her, right?
+--
+
+== !
+
+[.big]#I looked back on +
+the long chain of curious +
+circumstances#
+
+[NOTE.speaker]
+--
 I think we could do those things without changing the Markov chain code I showed earlier. Preprocessing and annotating tokens on the way in, yes, postprocessing on the way out, yes, but the bit in the middle would stay the same.
 
 If we're prepared to step away from that, all kinds of other possibilities open up - latent semantic analytics, word2vec, all kinds of exciting things.
@@ -980,12 +997,12 @@ I mentioned before that some tokens have very small number of transitions, while
 
 We get these little islands of stability, we can see them here - "two pronged hayfork" - but then we hit the end of the sentence and, it's all up in the air again.
 
-Quality here is very subjective, but I would say this is not good. 
+Quality here is very subjective, but I would say this is not good.
 --
 
-== Sliding windows
+include::secret-agent.adoc[]
 
-one token, vs two tokens, etc
+== !
 
 accidental source recovery
 
@@ -995,9 +1012,15 @@ accidental source recovery
 
 [NOTE.speaker]
 --
-On the one hand, this is a just a bit of fun. Programming for money is great and all, but it's often quite run of the mill, so if you need to, just bunk off for a couple of hours - noone will notice - and write something fun, something a bit magic. You'll feel better for it.
+On the one hand, this is a just a bit of fun. Programming for money is great and all, but it's often quite run of the mill, so if you need to, just bunk off for a couple of hours (pop some sport on in the background if that's your thing, Koyaanisqatsi, or whatever) - noone will notice - and write something fun, something a bit magic. You'll feel better for it.
 
-On the other hand, the title of this talk is obviously an allusion to the AI hype that's swirling and whirling all around us. Even a tiny system like this can display surprising, maybe even convincing, behaviour, but as we feed it more and more text, it actually gets worse and worse. Bigger systems will display even more surprising and convincing behaviour, but as they grab more and more text, it looks like they too will actually get worse and worse.
+On the other hand, the title of this talk is obviously an allusion to the AI hype that's swirling and whirling all around us.
 
-I've just said programming can be a ton of fun, because it can. We can reach out and explore these incredible problem spaces, and for each problem there's an infinity of solutions. There's this incredible multidimensional space we can shape and travel through, so it can be fun, but it can be dangerous. There are consequences to the things we build too. So, have fun, but let's be careful out there.
+Even a tiny system like this can display surprising, maybe even convincing, behaviour. We've got about a hundred lines of code here, but the model we've built with it is literally beyond comprehension. As we feed it more and more text, as the complexity increases, it actually degrades, it gets worse. Larger, more inherently complex, systems will display even more surprising and convincing behaviour, but as they grab more and more text, it looks like they too will actually get worse and worse.
+
+I've just said programming can be a ton of fun, because it can. We can reach out and explore these amazing problems, and for every problem there's an infinity of solutions. There's this incredible multidimensional space we can shape and travel through, so it can be fun, but it can be dangerous.
+
+There are consequences from the things we build too.
+
+So, have fun, but let's be careful out there.
 --
