@@ -5,7 +5,7 @@ Jez Higgins, jez@jezuk.co.uk
 :customcss: style/theme-tweak.css
 :revealjs_theme: night
 :revealjs_totalTime: 4800
-:revealjs_progress: true
+:revealjs_progress: false
 :revealjs_controls: true
 :revealjs_transition: none
 :revealjs_slideNumber: c/t
@@ -44,7 +44,7 @@ Sat navs! They're pretty cool, although obviously they need a lot of specialist 
 
 == !
 
-cyclestreets image
+image::images/cyclestreets.jpeg[]
 
 [NOTE.speaker]
 --
@@ -1004,7 +1004,35 @@ include::secret-agent.adoc[]
 
 == !
 
-accidental source recovery
+image::images/chimera-2.png[]
+
+[NOTE.speaker]
+--
+What do we make of this? Better? Quite a lot better?
+
+It certainly reads more naturally. There are some actual proper sentences in there, although I think we can still see it moving from Austen to Mastodon to Conan Doyle.
+
+If widening that window to 2, is better, what if we go to 3 or 4?
+--
+
+== !
+
+image::images/chimera-4.png[]
+
+[NOTE.speaker]
+--
+Well now, this looks great.
+
+But hang on. "I know nothing more of him that I have learned from meeting him occasionally in the laboratory"? That's a line straight of out The Sign Of The Four, when Stamford is about to introduce Watson to Holmes for the first time.
+
+"Jane met here with a smile of such sweet complacency...", that must be Austen.
+
+Our model is now just regurgitating the sources texts more or less wholesale. As we've widened the window, increased the length of the tuple of words, the number of possible following words has more or less collapsed.
+
+A width of two, that was ok - it brought a certain amout of stability while still allowing variation.  "nothing more" occurs nearly 40 times in Holmes stories - nothing more I could do, nothing more to say, nothing more substantial, nothing more exciting, and so on - so there's still room to manoeuvre.
+
+But when we turn that up a little too much, suddenly we're revealing our training data to the world.
+--
 
 == !
 
@@ -1014,9 +1042,11 @@ accidental source recovery
 --
 On the one hand, this is a just a bit of fun. Programming for money is great and all, but it's often quite run of the mill, so if you need to, just bunk off for a couple of hours (pop some sport on in the background if that's your thing, Koyaanisqatsi, or whatever) - noone will notice - and write something fun, something a bit magic. You'll feel better for it.
 
-On the other hand, the title of this talk is obviously an allusion to the AI hype that's swirling and whirling all around us.
+On the other hand, the title of this talk is obviously an allusion to the AI hype/future wonderland/torment nexus that's swirling and whirling all around us.
 
-Even a tiny system like this can display surprising, maybe even convincing, behaviour. We've got about a hundred lines of code here, but the model we've built with it is literally beyond comprehension. As we feed it more and more text, as the complexity increases, it actually degrades, it gets worse. Larger, more inherently complex, systems will display even more surprising and convincing behaviour, but as they grab more and more text, it looks like they too will actually get worse and worse.
+Even a tiny system like this can display surprising, maybe even convincing, behaviour. We've got about a hundred lines of code here, but the model we've built with it is literally beyond comprehension. As we feed it more and more text, as the complexity increases, it actually degrades, it gets worse. As we widened the window, it got better and then collapsed. Larger, more inherently complex, systems will display even more surprising and convincing behaviour, but as they grab more and more text, it looks like they too will actually get worse and worse.
+
+Will it be quite as obvious as what we've just seen? Well, it's not unknown for chatbots to go full-on Nazi within hours or days, but the more subtle degradations? Will we notice? And if we don't, does that mean they're ok, or that we just haven't spotted the problems yet?
 
 I've just said programming can be a ton of fun, because it can. We can reach out and explore these amazing problems, and for every problem there's an infinity of solutions. There's this incredible multidimensional space we can shape and travel through, so it can be fun, but it can be dangerous.
 
