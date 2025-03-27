@@ -6,7 +6,7 @@ Jez Higgins, jez@jezuk.co.uk
 :revealjs_theme: night
 :revealjs_totalTime: 4800
 :revealjs_progress: false
-:revealjs_controls: true
+:revealjs_controls: false
 :revealjs_transition: none
 :revealjs_slideNumber: c/t
 :revealjs_showSlideNumber: speaker
