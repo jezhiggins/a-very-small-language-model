@@ -24,7 +24,7 @@ It's fairly hefty competition, and I'm very flattered you've chosen to be here. 
 
 So, what are we going to do?
 
-We're going to build a bit of magic software in an hour or so.
+We're going to talk about a bit of magic software
 --
 
 == !
@@ -35,7 +35,7 @@ We're going to build a bit of magic software in an hour or so.
 --
 There are lots of things in software that seem kind of amazing, even to people who work in software. Operating systems, compilers & interpreters, windowing systems - things we use all day every day - are obvious choices.
 
-I mean, does anyone really understand operating systems? We passed the comprehension limit (which I'm going to confidently state is about 10 thousand lines but without the reference to back it up) for operating systems with 6th Edition Unix. It's incredible they work at all!
+I mean, does anyone really understand operating systems? We passed the comprehension limit (which I'm going to confidently state is about 10 thousand lines but without the reference to back it up) for operating systems with 6th Edition Unix, and that was in 1975. There are device drivers bigger than that now. Operating systems are so big, it's incredible they work at all!
 
 Perhaps operating systems are less a source of wonder, and more a source of irritation to the wider population?
 
@@ -48,7 +48,11 @@ image::images/cyclestreets.jpeg[]
 
 [NOTE.speaker]
 --
+Sat navs! They're pretty cool, although obviously they need a lot of specialist hardware, and a whole load of mapping data.
+
 Here's a satnav in action - it's getting real time GPS updates, so it's able to show position, heading, and speed (to within a couple of metres, so Heisenberg bugs are not an issue). We've got a map data, so we know how far to the next turning and which way we need to turn, how much of the journey distance is left, how much of the journey we've already covered and how quickly so it can calculate how long it'll take to arrive.
+
+They're pretty cool.
 
 Lots of games stuff is pretty amazing - I'm not just talking about graphics rendering, but things like in-game opponents
 --
@@ -78,7 +82,7 @@ image::images/calculator.png[]
 --
 Even the more mundane stuff can be fascinating, once you know about it. There's  an incredible article about Hans Boehm's calculator app. It magical because it can do (10^100) + 1 − (10^100) correctly through the miracle of quite a lot of hard maths.
 
-These are, however, all pretty large topics. You can’t write an operating system, or even a calculator, in the time available to us today. I can’t anyway. I am not Ken Thompson.
+These are, however, all pretty large topics. You can’t cover an operating system, or even a calculator, in the time available to us today. I can’t anyway. I am not Ken Thompson.
 --
 
 == !
@@ -147,11 +151,11 @@ Next ProLeague hockey is the 7 June btw - when there is frankly too much on. Spa
 
 [NOTE.speaker]
 --
-Before we find out, I'd just like to let you know that all the code we'll be looking at today will be in JavaScript.
+Before we go on, I'd just like to let you know that all the code we'll be looking at today will be in JavaScript.
 
 My first language is {cpp} (it's not, by you know what I mean), and perhaps because of that, I’ve had conversations with people who work in C# or Python or PHP or similar and they'll say something like _all that low-level stuff is too complicated for them_. Is that familiar to anyone here? I’ve also encountered a bit of the reverse - {cpp} (and C and assembler) snobs who look down the noses at languages you can’t cause a segfault with and, by extension, the people who use them.
 
-The latter are probably beyond redemption, but it kind of boils my piss that there are programmers who’ve taken some of that snobbery onto themselves and accept that it’s founded in any kind of truth. {cpp} programmers aren’t on some rarefied mountain top. Programming’s programming. Software’s the most malleable medium we could wish to work in. Anybody can do anything in software.
+The latter are probably beyond redemption, but it kind of infuriates me that there are programmers who’ve taken some of that snobbery onto themselves and accept that it’s founded in any kind of truth. {cpp} programmers aren’t on some rarefied mountain top. Programming’s programming. Software’s the most malleable medium we could wish to work in. Anybody can do anything in software.
 
 So, I'm doing this in JavaScript :D  If we can do magic stuff in JavaScript, then we can do anything.
 
@@ -509,6 +513,7 @@ hello world
 hello everyone
 hello world
 hello world
+
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
 
@@ -547,6 +552,7 @@ hello world
 hello everyone
 hello world
 hello world
+
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
 
@@ -722,7 +728,7 @@ grateful -> (to, 1)
 --
 Our data structure now looks something like this.
 
-And so on, for another 8379 tokens.  8379 seems like a lot, but I can only assume there are a lot of a) names and b) horrific misspellings in there.  There are approximately 35000 state transitions between all those tokens. I tried to get graphviz to draw the diagram, but it's been spinning 10 days, and it's still not finished.
+And so on, for another 8379 tokens.  8379 seems like a lot, but I can only assume there are a lot of a) names and b) horrific misspellings in there.  There are approximately 35000 state transitions between all those tokens. I tried to get graphviz to draw the diagram, but was still spinning after 10 days.
 
 All this is clear, yes? We can read our source corpus, generating a series of token pairs, producing a big list of each unique token we encounter, together with the counts of the tokens that follow.
 
@@ -799,7 +805,7 @@ And my favourite example word was "hello". I am, it seems, nothing if not predic
 
 This is interesting, right? This, I'd suggest, is unexpected because hello seems like a perfectly normal word, but in this corpus, it has a certain quirk, a certain characteristic.
 
-Because, our little sliding of word pairs, our occurrence counts have captured something about this body off text.
+Because, our little sliding of word pairs, our occurrence counts have captured something about this body of text.
 --
 
 == !
@@ -863,7 +869,8 @@ Elizabeth
 the place if she added lustre to understand that their
 respective houses for
 
-the particulars , she thought , if she did everything in the pleasure
+the particulars , she thought , if she did everything in the
+pleasure
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -896,7 +903,8 @@ the way by both stared at Lausanne . My mind had been the
 
 the sight and my skill . He waved his brown crumbly band .
 
-the maid , without omitting anything of a small that of the certainty
+the maid , without omitting anything of a small that of the
+certainty
 
 the room , and explained , I clutched her . Mr Holmes ,
 
@@ -910,7 +918,7 @@ jez@coldsplash ~/w/j/lets-predict (main)>
 --
 Here's some samples from a third corpus - the text of all the Sherlock Holmes novels and stories.
 
-Again, very different feel, from the previous two, but I think it's not as distinctive. No giveaways - no Watson, no Holmes.
+Again, very different feel, from the previous two, but I think it's not as distinctive.
 
 We've taken another big step up in word count - up to 650 thousand words - five times as many as Pride and Prejudice and getting on for 15 times as many words as in my toot archive. But we've also changed another dimension.
 
@@ -1182,7 +1190,7 @@ Remember my toots by themselves had 35000 state transitions. We're up to who kno
 
 I mentioned before that some tokens have very small number of transitions, while others, like a, the, commas, and what-not, have this very large number. As the size of the corpus increases, and the variation within that corpus - we're combining now three very different text bodies - the fan-out from, say, a comma just gets bigger and bigger and bigger, and so, I don't know, the coherence of the output starts to fall off.
 
-We get these little islands of stability, we can see them here - "two pronged hayfork" - but then we hit the end of the sentence and, it's all up in the air again.
+We get these little islands of stability, we can see them here - "dwarfish chapparal bushes" - but then we hit the end of the sentence and, it's all up in the air again.
 
 Quality here is very subjective, but I would say this is not good.
 --
@@ -1198,14 +1206,10 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run chimera 2
 > lets-predict@1.0.0 chimera
 > node bin/chimera.js 2
 
- In the exuberance of my acquaintances are already under such
-a conclusion of all that belonged to this kind was done away
-much of their inattention to what was going to be not quite so
-strongly anywhere else.  Quack!  More than once in a half km
-of fibre to.  And you've just stopped me from venturing out
-unless the weather was exceptionally genial, and having
-wikipedia pages and what they call delirium, I can recall
-nothing worse.
+But with such furniture as you have now made it second nature.
+They thought to myself,” said Darcy, a dangerous route.  I
+wonder how he came back at home, Elizabeth felt an anxiety on
+the JVM.  Without meaning to hurt either of them.
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -1256,11 +1260,46 @@ But when we turn that up a little too much, suddenly we're revealing our trainin
 
 == !
 
+[source, shell]
+----
+jez@coldsplash ~/w/j/lets-predict (main)> npm run mid-value-toots 2
+
+> lets-predict@1.0.0 mid-value-toots
+> node bin/autotoot.js 2
+
+My phone keyboard asked me about 4 ads, I guess.
+
+You'd expect that to take the car stiffness.
+
+This is an organisation almost entirely built around public
+image (But also yes, that means it should be directing the
+actions of a territorial barney.
+
+Hockey opposition have sacked off.
+
+Amanda Grant's The Joy Of Vegan Cooking is, using two
+different dates formats in a very different vein The Amazing
+Remarkable Monsieur Leotard are all worth your time.
+
+jez@coldspash ~/w/j/lets-predict (main)>
+----
+
+[NOTE.speaker]
+--
+Turns out, with a less homogeneous data set, you can leak training data even with a window of 2.
+
+Here's my mastodon corpus again, with a window of two.
+
+I'd say, for randomly generated sentences these are pretty good, but "Hockey opposition have sacked off." is a verbatim regurgitation of a bit of on internet ranting. The second half of that last line "a very different vein The Amazing Remarkable Monsieur Leotard are all worth your time" is also straight out of the corpus. "in a" is the key part there, the occurs a lot, but then once we've headed down "a very" (which occurs 6 times) and then "very different" (once) we're locked into the rest of that sentence.
+--
+
+== !
+
 [.big]#Even small systems get the blues#
 
 [NOTE.speaker]
 --
-On the one hand, this is a just a bit of fun. Programming for money is great and all, but it's often quite run of the mill, so if you need to, just bunk off for a couple of hours (pop some sport on in the background if that's your thing, Koyaanisqatsi, or whatever) - noone will notice - and write something fun, something a bit magic. You'll feel better for it.
+On the one hand, this is a just a bit of fun. Programming for money is great and all, but it's often quite run of the mill, so if you need to, just bunk off for a couple of hours (pop some sport on in the background if that's your thing, play some Ennio Morricone, whatever works for you) - noone will notice - and write something fun, maybe something a bit magic. You'll feel better for it.
 
 On the other hand, the title of this talk is obviously an allusion to the AI hype/future wonderland/torment nexus that's swirling and whirling all around us.
 
@@ -1273,4 +1312,6 @@ I've just said programming can be a ton of fun, because it can. We can reach out
 There are consequences from the things we build too.
 
 So, have fun, but let's be careful out there.
+
+Thank you all for your time and attention
 --
