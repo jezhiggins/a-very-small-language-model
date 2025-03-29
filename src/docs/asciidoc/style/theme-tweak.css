@@ -4,6 +4,10 @@
   font-size: 80%;
 }
 
+.language-shell {
+  background-color: rgb(48, 10, 36)
+}
+
 .slide-header {
   width: 100%;
   z-index: 10;
