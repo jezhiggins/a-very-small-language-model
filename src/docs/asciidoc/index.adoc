@@ -823,15 +823,14 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run low-value-toots
 > node bin/lines-from.js ./data/toots.txt the
 
 the next question answered and peck edits her hall rug on back of
-the first class because that's why first episode it . If he's
+
 the plus keeper kit , they'll kick up a big you weren't plugged
-the tested programs , etc ) The small , but there are praying
+
 the building that got my letter . I pay very useful thing going
-the best . Let's head a ) . We've got messy . Although
+
 the workshop ? Some candidates say that work , which I don't need
+
 the first time in the spec in danger , what a cute little
-the boardgame sale to do it . I believe , but I'd put
-the code . * Delete ! So yea , thanks lads Forgot the
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -852,16 +851,19 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run oh-mr-darcy
 > lets-predict@1.0.0 oh-mr-darcy
 > node bin/lines-from.js ./data/pride-and-prejudice.txt the
 
-the valley , cheerful prognostics of Derbyshire . " for difference in censuring
-the table . " He is too cold , received ; for knowledge
-the ladies are always laughed heartily sorry that it all to them at
-the parish , than from her brother's entrance of my dear . Elizabeth
-the absence , with such girls , it to be undecided . I
-the place if she added lustre to understand that their respective houses for
+the valley , cheerful prognostics of Derbyshire . " for
+difference in censuring
+
+the ladies are always laughed heartily sorry that it all to
+them at
+
+the parish , than from her brother's entrance of my dear .
+Elizabeth
+
+the place if she added lustre to understand that their
+respective houses for
+
 the particulars , she thought , if she did everything in the pleasure
-the day before he then when the evening . She then - are
-the second ; and then _I_ do nothing remained unsubdued of seeing Mr
-the cottagers were now in whose own . My mother , when the
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -891,14 +893,13 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run commonplace
 > node bin/lines-from.js ./data/complete-sherlock-holmes.txt the
 
 the way by both stared at Lausanne . My mind had been the
+
 the sight and my skill . He waved his brown crumbly band .
-the country - faced , but I have a lock and blowing in
-the leaves carpeted stair , for a holiday , ' which means quick
+
 the maid , without omitting anything of a small that of the certainty
-the same all those cases where ? " I shall reward being a
+
 the room , and explained , I clutched her . Mr Holmes ,
-the poop that see a little seeds or the difficulty in a woman
-the cab out to - it's likely enough to Germany , that night
+
 the least we have your little chamber . It would seem to puzzle
 
 jez@coldsplash ~/w/j/lets-predict (main)>
@@ -969,15 +970,20 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run mid-value-toots
 > lets-predict@1.0.0 mid-value-toots
 > node bin/autotoot.js
 
- I carried a good: am deeply satisfying, 12 years in Swindon” hard to be simpler
+I carried a good: am deeply satisfying, 12 years in Swindon”
+hard to be simpler
 
- _Note doing so without getting the grass “A kerfuffle overhead, one of the UK, and I worked on the 30.
+_Note doing so without getting the grass “A kerfuffle
+overhead, one of the UK, and I worked on the 30.
 
- Team sport's great smell of 'moving in NY is it is the modern with it back in at about 4 different.
+Team sport's great smell of 'moving in NY is it is the modern
+with it back in at about 4 different.
 
- It's from HMRC didn't touch you did that baldy?
+It's from HMRC didn't touch you did that baldy?
 
- 8 minutes that one of the place I don't use FeedReader on a lot of C + would think, without an organisation almost all from.
+8 minutes that one of the place I don't use FeedReader on a
+lot of C + would think, without an organisation almost all
+from.
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -1001,14 +1007,14 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run austenesque
 > node bin/automeme.js ./data/pride-and-prejudice.txt
 
  Choose properly overjoyed on that if he had now necessary to
-whisper to.  She highly favourable answer.  She concluded her eyes
-were ready to prevail on this was least importance could be
-entirely, wisest and in machine - past occurrences had been heard
-little beyond the bounds of possibilities, and prepared for Mr
-Darcy, made; and happy day to Saturday?  Darcy would be
+whisper to.  She highly favourable answer.  She concluded her
+eyes were ready to prevail on this was least importance could
+be entirely, wisest and in machine - past occurrences had been
+heard little beyond the bounds of possibilities, and prepared
+for Mr Darcy, made; and happy day to Saturday?  Darcy would be
 disregarded?  Her daughters, seemed to whisper; coaxed and Mr
-Collins, had been distinguished by reflection, when the respect
-your house.
+Collins, had been distinguished by reflection, when the
+respect your house.
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -1032,10 +1038,10 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run holmesian
 > node bin/automeme.js ./data/complete-sherlock-holmes.txt
 
  Then we don't know what had marked the rigour of his pocket of
-local powers,” Tropical by an ancient crown which I was certainly,
-and five.  You monster!  “Yes.  “What is steep my person of his
-agitation that sorry if the hands up to make one in turn had
-disguised hand Holmes stretched out my arm.
+local powers,” Tropical by an ancient crown which I was
+certainly, and five.  You monster!  “Yes.  “What is steep my
+person of his agitation that sorry if the hands up to make one
+in turn had disguised hand Holmes stretched out my arm.
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -1153,16 +1159,15 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run chimera
 > lets-predict@1.0.0 chimera
 > node bin/chimera.js
 
- “I walked down to tell the cloud of yours, and is a bullet, know
-his breakfast was interrupted two pronged hayforks.  “I * you
-can't think everyone Looking forward with pleasure of the family
-in my eyes every corner of ill - I've never really esteemed
-accomplished.  Ah you like Shout out his seat, but I'm looking for
-that they resolved - - and pauses and Farage rules visualiser I'll
-sit by no answer; the sea.  Did you I'm staying for one of us now
-put my dear, they've never have been accustomed to do justice to
-be attended her mother, without intermission;” Incredible work
-done similar offer is blinded by the bag?
+ If the dwarfish chaparral bushes.  I can see her brother's
+indifference while? ” If you mean _nobody_ needs Yes, then all
+his large party to answer this means of anything at work in
+which lead me. ” said, and Drebber passed under the good to
+the track, if he had better.  Just except in the credit of
+course, and cycling.  Just listened with him is not any but
+I'm not so? ” Miss Elizabeth began to his fault the letter of
+understand anything ridiculous elections.  Always I'd actually
+ship anything holiday?  Not as sensitive to the front garden.
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -1193,13 +1198,14 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run chimera 2
 > lets-predict@1.0.0 chimera
 > node bin/chimera.js 2
 
- In the exuberance of my acquaintances are already under such a
-conclusion of all that belonged to this kind was done away much of
-their inattention to what was going to be not quite so strongly
-anywhere else.  Quack!  More than once in a half km of fibre to.
-And you've just stopped me from venturing out unless the
-weather was exceptionally genial, and having wikipedia pages and
-what they call delirium, I can recall nothing worse.
+ In the exuberance of my acquaintances are already under such
+a conclusion of all that belonged to this kind was done away
+much of their inattention to what was going to be not quite so
+strongly anywhere else.  Quack!  More than once in a half km
+of fibre to.  And you've just stopped me from venturing out
+unless the weather was exceptionally genial, and having
+wikipedia pages and what they call delirium, I can recall
+nothing worse.
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
@@ -1222,13 +1228,13 @@ jez@coldsplash ~/w/j/lets-predict (main)> npm run chimera 4
 > lets-predict@1.0.0 chimera
 > node bin/chimera.js 4
 
-  We've seen the real world consequences before. “” There are no
-crimes and no criminals in these days, “he said;” I know nothing
-more of him than I have learned from him occasionally in the
-laboratory.  Jane met her with a smile of such sweet complacency,
-a glow of such happy expression, as sufficiently marked how well
-she was satisfied with the occurrences of the evening.  Her
-curiosity, however, was unexpectedly relieved.
+  We've seen the real world consequences before. “” There are
+no crimes and no criminals in these days, “he said;” I know
+nothing more of him than I have learned from him occasionally
+in the laboratory.  Jane met her with a smile of such sweet
+complacency, a glow of such happy expression, as sufficiently
+marked how well she was satisfied with the occurrences of the
+evening.  Her curiosity, however, was unexpectedly relieved.
 
 jez@coldsplash ~/w/j/lets-predict (main)>
 ----
