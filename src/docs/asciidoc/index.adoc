@@ -447,6 +447,9 @@ What's the missing step here?
 
 == !
 
+[.big]#How do we know what the words are?#
+
+
 [.big]#How do we know what the probabilities are?#
 
 [NOTE.speaker]
